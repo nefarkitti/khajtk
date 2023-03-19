@@ -1,0 +1,1205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.btn-color {
+    color: rgb(0, 0, 0);
+}
+
+.overlaybg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 998;
+    height: 100%;
+    width: 100%;
+}
+
+/** {
+    background-image: url('https://cdn.discordapp.com/attachments/830022189897744384/1057430116407447562/92f65e5d2e7fcab78c0667ec5067673e.png') !important;
+    background-position: 50%;
+    background-repeat: repeat;
+    background-size: 20%;
+    color: pink !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    word-wrap: none;
+    filter: sepia(100%);
+}*/
+
+h1 {
+    color: white;
+}
+
+.like:hover {
+    color: rgb(255, 0, 162) !important;
+}
+.like:hover .like {
+    color: rgb(255, 0, 162) !important;
+}
+.dislike:hover {
+    color: rgb(0, 145, 255) !important;
+}
+.dislike:hover .dislike {
+    color: rgb(0, 145, 255) !important;
+}
+.liked {
+    color: rgb(255, 0, 162) !important;
+    font-variation-settings:
+    'FILL' 1 !important
+}
+.disliked {
+    color: rgb(0, 145, 255) !important;
+    font-variation-settings:
+    'FILL' 1 !important
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+body {
+    margin: 0;
+    background: rgb(245, 245, 245);
+    
+    color: rgb(0, 0, 0);
+}
+.verified {
+    color: rgb(255, 133, 222);
+    vertical-align: middle;
+    font-size: 20px !important;
+    margin-left: 0.2rem;
+    user-select: none;
+    font-variation-settings:
+    'FILL' 1
+}
+
+truecenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+hr {
+    clear: both;
+}
+
+::placeholder {
+    color: rgb(16, 16, 16);
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+}
+
+.timestamp {
+    float: right;
+    color: rgb(95, 95, 95);
+    user-select: none;
+}
+
+.pin-info {
+    display:inline-block;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+    color: rgb(25, 25, 25);
+}
+.pin {
+    font-size: 20px !important;
+    display: inline;
+    vertical-align: bottom;
+    color: rgb(25, 25, 25);
+}
+
+.topbar {
+    background-color: rgb(255, 133, 222);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    padding-bottom: 0.5rem;
+    user-select: none;
+}
+.navbar {
+    box-shadow: 0px 10px 5px rgb(255, 133, 222);
+    padding-bottom: 0.5rem;
+}
+.navbar a {
+    display: inline;
+    padding: 0.2rem;
+    color: white;
+}
+.navbar a .navbtn {
+    margin-right: 0.1rem;
+    display: inline;
+    vertical-align: bottom;
+    font-size: 20px;
+    color: white;
+}
+.navbar a.selected {
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 163, 230);
+}
+.navbar a.selected .navbtn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 163, 230);
+}
+.navbar a:hover {
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 163, 230);
+}
+.navbar a:hover .navbtn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 163, 230);
+    font-variation-settings:
+    'FILL' 1
+}
+.navbar a:hover div.notif {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 162);
+}
+.notif {
+    border-radius: 100%;
+    display: inline-flex;
+    background-color: rgb(255, 0, 162);
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div.main-container {
+    border-radius: 10px;
+    box-shadow: 0.5rem 0.5rem rgb(255, 111, 217);
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 133, 222);;
+    width: 20rem;
+    height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+div.main-container a {
+    color: rgb(255, 163, 230);
+}
+div.main-container a:visited {
+    color: rgb(255, 163, 230);
+}
+div.main-container a:hover {
+    color: rgb(255, 163, 230);
+    text-decoration: underline;
+}
+div.main-container img {
+    image-rendering:optimizeQuality;
+}
+
+div.main-container input[type=text] {
+    border: none;
+    background: none;
+    background-color: rgb(242, 242, 242);
+    padding: 0.2rem;
+    border-radius: 5px;
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem;
+}
+div.main-container input[type=password] {
+    border: none;
+    background: none;
+    background-color: rgb(242, 242, 242);
+    padding: 0.2rem;
+    border-radius: 5px;
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem;
+}
+div.main-container input[type=text]:focus-visible {
+    outline: none;
+    border: none;
+}
+div.main-container input[type=password]:focus-visible {
+    outline: none;
+    border: none;
+}
+
+div.main-container input[type=text]:focus-visible::placeholder {
+    color: rgb(21, 21, 21)
+}
+div.main-container input[type=password]:focus-visible::placeholder {
+    color: rgb(21, 21, 21);
+}
+
+span.save {
+    color: rgb(194, 194, 194);
+    font-size: 20px;
+    user-select: none;
+    margin-left: 0.3rem;
+}
+span.save:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+button {
+    border-radius: 5px;
+    border: none;
+    background: none;
+    color: rgb(255, 255, 255)
+}
+button:hover {
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255, 163, 230);
+    color: rgb(255, 255, 255);
+}
+
+table.profile-table {
+    margin-top: 2rem;
+    width: 95%;
+    justify-content: center;
+    text-align: center;
+}
+table.profile-table tr td {
+    min-width: 50%;
+    max-width: 50%;
+}
+table.profile-table tr td.profile-table-container {
+    width: 50%;
+    height: fit-content;
+}
+
+.thumb {
+    font-size: 15px !important;
+}
+.mutual {
+    text-align: left;
+    margin-bottom: 0.2rem;
+    user-select: none;
+    width: fit-content;
+}
+
+.mutual .mutual-displayname {
+    color: rgb(0, 0, 0);
+}
+.mutual .mutual-username {
+    color: rgb(121, 121, 121);
+}
+.mutual:hover span {
+    color: rgb(255, 163, 230);
+}
+.mutual:hover {
+    color: rgb(255, 163, 230);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.mutual img {
+    vertical-align: bottom;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.profile-table-user-section {
+    padding: 0.5rem;
+    text-align: left;
+    justify-content: center;
+    display: contents;
+}
+.user-profile-top {
+    border-radius: 10px;
+    background-color: rgb(231, 231, 231);
+    padding: 1rem;
+    padding-bottom: 1.5rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    filter:blur(50%);
+}
+.user-profile-other {
+    padding: 1rem;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.user-profile-other span {
+    color: rgb(6, 6, 6);
+}
+.user-profile-other b span {
+    color: rgb(28, 28, 28);
+}
+.profile-table-user-profile-icon {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.profile-table-user-profile-displayname {
+    margin-left: 0.5rem;
+    font-size: 35px;
+}
+.profile-table-user-profile-username {
+    color: rgb(95, 95, 95);
+    margin-left: 0.5rem;
+}
+.profile-table-user-profile-btns {
+    margin-left: 7rem;
+    margin-top: 0.7rem;
+}
+.profile-table-post-friendreplies-reply {
+    height: fit-content;
+    display: inline-block;
+    background-color: rgb(220, 220, 220);
+    padding: 0.2rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    margin-bottom: 0.2rem;
+}
+.profile-table-post-friendreplies-reply:hover {
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+}
+
+.profile-table-post-friendreplies-reply .verified {
+    vertical-align: text-bottom;
+    color: rgb(255, 133, 222);
+}
+.profile-table-post-friendreplies span {
+    color: rgb(131, 131, 131);
+}
+.profile-table-friendreplies-usericon {
+    border-radius: 3px;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+.profile-table-friendreplies-displayname {
+    font-size: 18px;
+    margin-left: 0.2rem;
+    vertical-align: middle;
+    color:black !important;
+}
+.profile-table-friendreplies-contents {
+    vertical-align: middle;
+    font-size: 14px;
+    color: rgb(90, 90, 90) !important;
+}
+
+.user-profile-btn {
+    border-radius: 10px;
+    background-color: rgb(213, 213, 213);
+    padding: 0.4rem;
+    font-size: 12px;
+    vertical-align:middle;
+    color: rgb(45, 45, 45);
+}
+.user-profile-btn:hover {
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+    user-select: none;
+    color: rgb(0, 0, 0);
+}
+.user-profile-btn:hover span {
+    color: rgb(0, 0, 0);
+    font-variation-settings:
+    'FILL' 1
+}
+.user-profile-btn span {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    vertical-align:middle;
+    margin-right: 0.2rem;
+}
+
+
+.profile-table-posts-section {
+    padding: 0.5rem;
+    padding-top: 0;
+}
+div.profile-table-posts-section {
+    max-width: 60%;
+}
+
+.profile-table-makepost {
+    text-align: left;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 0.5rem;
+}
+.profile-table-makepost textarea {
+    width: 100%;
+    height: 6rem;
+    background-color: rgb(217, 217, 217);
+    resize: none;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.profile-table-edit-inputfield {
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+}
+.profile-table-edit-inputfield input {
+    border-radius: 5px;
+    padding: 0.2rem;
+    background-color: rgb(213, 213, 213);
+    border: 0;
+}
+.profile-table-edit-inputfield input::placeholder {
+    color: black;
+}
+.profile-table-edit-inputfield input:focus-visible {
+    border: 0;
+    outline: 0;
+}
+.profile-table-edit-inputfield span {
+    /*color: rgb(223, 223, 223);*/
+    color: black;
+    background-color: none;
+    font-size: 19px;
+    vertical-align: bottom;
+    user-select: none;
+    margin-left: 0.2rem;
+    border-radius: 5px;
+    padding: 0.1rem;
+}
+.profile-table-edit-inputfield span:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(147, 147, 147);
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 1
+}
+
+.profile-table-post {
+    border-radius: 5px;
+    padding: 0.5rem;
+    float: left;
+    background-color: rgb(231, 231, 231);
+    width: 100%;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    clear:right;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.profile-table-post:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.profile-table-post hr {
+    color: rgb(218, 218, 218);
+    clear: both;
+    width: 90%;
+    margin-top: 3.5rem;
+}
+
+.profile-table-post .profile-table-post-more {
+    float: right;
+    user-select: none;
+    text-align: right;
+    display: inline !important;
+}
+.profile-table-post .profile-table-post-more span.m:hover {
+    background-color: rgb(158, 158, 158);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.list-item {
+    border-radius: 5px;
+    background-color: rgb(162, 162, 162);
+    padding: 0.3rem;
+    margin-bottom: 0.1rem;
+    text-align: left;
+}
+.red {
+    background-color: rgb(182, 116, 116);
+    color: rgb(78, 14, 14);
+}
+.red span {
+    color: rgb(78, 14, 14);
+}
+.list-item:hover {
+    background-color: rgb(155, 155, 155);
+    cursor: pointer;
+}
+.profile-table-post-more-list {
+    margin-top: 0.2rem;
+    position:absolute;
+    right: 3.5vw;
+    padding: 0.4rem;
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+}
+.post {
+    right: 20.5vw;
+}
+
+.profile-table-post-more-list div span {
+    text-align: left;
+    width: fit-content;
+    clear: both;
+}
+.profile-table-post-more-list div span span.listbtn {
+    font-size: 20px;
+    vertical-align: bottom;
+    display: inline;
+}
+
+.profile-table-post .profile-table-post-usericon {
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+.profile-table-post .profile-table-post-displayname {
+    display: inline-block;
+    font-size: 23px;
+    margin-left: 0.35rem;
+    text-overflow: ellipsis;
+    max-width: 50%;
+    overflow: hidden;
+}
+.profile-table-post .profile-table-post-displayname:hover {
+    cursor: pointer;
+    color: rgb(255, 163, 230);
+    text-decoration: underline;
+}
+.profile-table-post .profile-table-post-username {
+    color: rgb(105, 105, 105);
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 0.35rem;
+    text-overflow: ellipsis;
+    max-width: 35%;
+    overflow: hidden;
+}
+.profile-table-post .profile-table-post-username:hover {
+    cursor: pointer;
+    color: rgb(255, 163, 230);
+    text-decoration: underline;
+}
+.profile-table-post .profile-table-post-extra {
+    color: rgb(130, 130, 130);
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 0.35rem;
+    text-overflow: ellipsis;
+    max-width: 35%;
+    overflow: hidden;
+    margin-top: 0.2rem;
+}
+.profile-table-post .profile-table-post-extra .extra-username {
+    color: rgb(0, 0, 0);
+}
+.profile-table-post .profile-table-post-extra .extra-username:hover {
+    cursor: pointer;
+    color: rgb(255, 163, 230);
+    text-decoration: underline;
+}
+.profile-table-post .profile-table-post-contents {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    float: left;
+    clear: left;
+}
+.tagged {
+    filter: contrast(0%);
+}
+.profile-table-post-attachments {
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+    float: left;
+    clear: left;
+    margin-bottom: 1rem;
+}
+.profile-table-post-attachments .content-warning {
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(29, 29, 29);
+    border-radius: 5px;
+    user-select: none;
+}
+
+.profile-table-post-attachments .content-warning .container {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.profile-table-post-attachments .content-warning span.material-symbols-rounded {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 50px;
+}
+.profile-table-post-attachments .content-warning span {
+    color: white;
+}
+.profile-table-post-attachments .content-warning button {
+    margin-top: 1rem;
+    color: white;
+}
+
+.profile-table-post-attachments img {
+    border-radius: 5px;
+    max-width: 45%;
+    float: left;
+    clear: left;
+}
+.profile-table-post-attachments video {
+    border-radius: 5px;
+    max-width: 70%;
+    float: left;
+    clear: left;
+}
+.profile-table-post .profile-table-post-btns {
+    float: left;
+}
+.profile-table-post .profile-table-post-btns span {
+    user-select: none;
+    color: rgb(48, 48, 48);
+    display: inline;
+    font-size: 15px;
+}
+.profile-table-post .profile-table-post-btns span .btn-icon {
+    vertical-align: bottom;
+    font-size: 19px;
+    margin-right: 0.2rem;
+}
+
+.profile-table-post .profile-table-post-btns span:hover {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.profile-table-post .profile-table-post-btns span:hover .btn-icon {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.popup {
+    z-index: 9999;
+    position: fixed; /* before it was absolute, changed to fixed to make it uh be able to be seen when scrolling */
+}
+.main {
+    filter: contrast(-1);
+}
+
+/*div.popup {
+    background-color: rgb(155, 155, 155); 
+    padding: 3rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+div.popup .customization-main input {
+    border: none;
+    background-color: rgb(40, 40, 40); 
+}
+div.popup .customization-main input:focus-visible {
+    border: none;
+}
+div.popup .customization-main label {
+    border: none;
+    background-color: rgb(40, 40, 40); 
+}*/
+textarea {
+    border: none;
+}
+
+div.messaging-container {
+    width: 65%;
+    height: 70%;
+}
+
+div.messages-list {
+    text-align: left;
+    float: left;
+    height: 100%;
+    width: 25%;
+    overflow-x: scroll;
+}
+
+div.messages-list-item.selected {
+    background-color: rgb(96, 186, 255) !important;
+}
+div.messages-list-item {
+    width: 97%;
+    background-color: rgb(229, 229, 229);
+    height: 3rem;
+    padding: 0.2rem;
+    user-select: none;
+    float: left;
+    clear: right;
+    margin-bottom: 0.1rem;
+    overflow: hidden;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    /*border-left: 0.2rem solid rgb(128, 0, 255);*/
+    border-radius: 5px;
+}
+div.messages-list-item:hover {
+    background-color: rgb(152, 152, 152);
+    cursor: pointer;
+}
+img.messages-list-item-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    float: left;
+    border-radius: 10px;
+}
+span.messages-list-item-displayname {
+    font-size: 15px;
+    margin-left: 0.3rem;
+}
+span.messages-list-item-username {
+    color: rgb(78, 78, 78);
+    font-size: 9px;
+    margin-left: 0.3rem;
+}
+span.messages-list-item-lastmsg {
+    display: ruby;
+    font-size: 10px;
+    float: left;
+    margin-left: 0.5rem;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    overflow: hidden;
+}
+
+div.messages {
+    text-align: left;
+    float: left;
+    height: 100%;
+    width: 75%;
+    justify-content: center;
+    text-align: center;
+}
+
+div.messages-userinfo {
+    display: inline-block;
+    background-color: rgb(229, 229, 229);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    width: fit-content;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+div.messages-userinfo img {
+    width: 4rem;
+    height: 4rem;
+    clear: both;
+    border-radius: 5px;
+}
+
+div.messages input {
+    width: 91%;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 5px;
+    background-color: rgb(189, 189, 189);
+}
+div.messages input[type=text]:focus-visible {
+    color: rgb(0, 0, 0);
+    outline: none;
+    border: none;
+}
+div.messages label {
+    margin-left: 1rem;
+}
+
+div.messages-hold {
+    width: 100%;
+    background-color: rgb(229, 229, 229);
+    height: 65%;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    overflow-x: scroll;
+    border-radius: 10px;
+}
+
+div.left-message {
+    margin: 0.3rem;
+    text-align: left;
+    background-color: rgb(96, 186, 255);
+    padding: 0.3rem;
+    float: left;
+    clear: both;
+    width: fit-content;
+    border-radius: 10px;
+    padding-right: 1rem;
+    max-width: 50%;
+    min-width: 30%;
+}
+
+div.left-message img.leftmsg-icon {
+    border-radius: 10px;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.3rem;
+    float: left;
+}
+span.leftmsg-displayname {
+    float: left;
+    font-size: 15px;
+}
+
+span.leftmsg-msg {
+    font-size: 12px;
+}
+
+span.leftmsg-timestamp {
+    font-size: 10px;
+    filter: opacity(50%);
+    user-select: none;
+    float: right;
+}
+
+div.right-message {
+    margin: 0.3rem;
+    text-align: left;
+    background-color: rgb(255, 87, 193);
+    padding: 0.6rem;
+    float: right;
+    clear: both;
+    width: fit-content;
+    border-radius: 20px;
+    max-width: 50%;
+    min-width: 30%;
+}
+
+span.rightmsg-msg {
+    font-size: 12px;
+}
+
+span.rightmsg-timestamp {
+    float: left;
+    font-size: 10px;
+    filter: opacity(50%);
+    user-select: none;
+}
+
+.messages-profile-btns {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.requests-list {
+    /*display: grid;
+    grid-template-columns: auto auto auto;*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.requests-list-item {
+    border-radius: 20px;
+    background-color: rgb(203, 203, 203);
+    padding: 0.5rem;
+    width: 30rem;
+    height: 4.2rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+.requests-list-item div.profile-table-user-profile-btns {
+    display: contents;
+    float: left;
+}
+
+.requests-list-item img.requests-list-item-icon {
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    float: left;
+}
+.requests-list-item span.requests-list-item-displayname {
+    float: left;
+}
+.requests-list-item span.requests-list-item-username {
+    font-size: 10px;
+    float: left;
+}
+
+.search-bar {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.search-bar button span {
+    vertical-align: bottom;
+    font-size: 25px;
+}
+.search-bar button:hover span {
+    color: black;
+}
+.search-bar button span:hover {
+    color: black;
+}
+.search-bar button {
+    vertical-align: middle;
+}
+.search-bar input {
+    border-radius: 10px;
+    background-color: rgb(161, 161, 161);
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+.saved-list{
+    width: 45%;
+}
+
+.make-a-post {
+    position:fixed;
+    display: flex;
+    bottom: 0;
+    font-size: 17px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    float: left;
+    background-color: rgb(255, 133, 222);
+    color:white;
+    padding: 0.25rem;
+    border-radius: 50px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+}
+.make-a-post:hover {
+    background-color: rgb(255, 194, 239);
+    color: white;
+
+}
+.make-a-post:hover span {
+    color: white;
+    font-variation-settings:
+    'FILL' 1 !important
+}
+.make-a-post span {
+    margin-right: 0.2rem;
+    color: white;
+    font-size: 25px;
+    float: left;
+}
+
+.post-creation {
+    background-color: rgb(242, 242, 242);
+    padding: 1.5rem;
+    display: flow-root;
+    border-radius: 10px;
+    box-shadow: 0.5rem 0.5rem rgb(221, 221, 221);
+}
+.attachments-input {
+    margin-top: 0.1rem;
+} 
+.post-creation img {
+    margin-top: 0.1rem;
+    float: left;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    outline: none;
+    background-color: none;
+}
+.post-creation label {
+    float: left;
+}
+.post-creation input {
+    float: left;
+}
+.post-creation-title {
+    font-size: 21px;
+    float: left;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+.post-creation textarea{
+    resize: none;
+    width: 50rem;
+    height: 10rem;
+    border-radius: 10px;
+    padding: 0.3rem;
+    background-color: white;
+}
+
+.post-creation button.post-btn {
+    border-radius: 10px;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgb(255, 133, 222);
+    color:white;
+    float: right;
+    margin-bottom: -1rem;
+    font-size: 17px;
+}
+.post-creation button.post-btn:hover {
+    background-color: rgb(255, 194, 239);
+}
+
+.closebtn {
+    float: right;
+    margin-top: -0.5rem;
+    user-select: none;
+}
+.closebtn:hover {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.charcount {
+    position: fixed;
+    top: 188;
+    right: 25;
+    user-select: none;
+    color: rgb(198, 198, 198);
+    background-color: white;
+    border-radius: 500px;
+    padding: 0.2rem;
+    filter: opacity(75%);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.settings-main {
+    width: 70%;
+}
+.settings-sidebar {
+    height: fit-content;
+    border-right: 3px solid rgb(219, 219, 219);
+    float: left;
+    padding-right: 0.5rem;
+    box-sizing: content-box;
+    width: 10%;
+}
+.settings-sidebar-option {
+    background-color: rgb(236, 236, 236);
+    display: block;
+    min-width: 6rem;
+    font-size: 18px;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    margin: 0;
+    width: fit-content;
+    float: left;
+    clear: left;
+    max-width: 6rem;
+    margin-bottom: 0.1rem;
+    border-radius: 5px;
+    text-align: left;
+}
+.settings-sidebar-option:hover {
+    background-color: rgb(223, 223, 223);
+    cursor: pointer;
+    width: 100%;
+}
+.settings-sidebar-option:hover span {
+    color: rgb(255, 0, 162);
+    cursor: pointer;
+    font-variation-settings:
+    'FILL' 1;
+}
+.settings-sidebar-option.selected {
+    background-color: rgb(252, 193, 244);
+}
+.settings-sidebar-option.selected span {
+    color: rgb(255, 0, 162);
+    font-variation-settings:
+    'FILL' 1;
+}
+.settings-sidebar-option span {
+    float: left;
+    vertical-align: text-bottom;
+}
+
+.settings-main-content {   
+    width: 87%;
+    background-color: rgb(238, 238, 238);
+    height: fit-content;
+    margin-left: 0.5rem;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+}
+
+div.account-settings center {
+    display: inline flow-root list-item;
+    text-align: center;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    list-style-type: none;
+}
+div.general-settings center {
+    padding-bottom: 1rem;
+}
+
+.intro {
+    animation-name: intro;
+    animation-duration: 1s;
+    filter: opacity(100%);
+    user-select: none;
+}
+
+ol {
+    padding: 0;
+    list-style-type: none;
+}
+ol li {
+    color: rgb(105, 105, 105);
+}
+
+.danger {
+    background-color: rgb(255, 125, 125);
+}
+.danger:hover {
+    background-color: rgb(255, 64, 64);
+    color: white;
+}
+.danger:hover span {
+    background-color: rgb(255, 64, 64);
+    color: white;
+}
+
+@keyframes intro {
+    from {box-shadow: 0rem 0rem rgb(255, 111, 217);filter: opacity(0%);transform: translate(10%, 10%);}
+    to {box-shadow: 0.5rem 0.5rem rgb(255, 111, 217);filter: opacity(100%);}
+  }

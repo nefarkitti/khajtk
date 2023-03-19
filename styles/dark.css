@@ -1,0 +1,125 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: rgb(193, 193, 193);
+}
+
+.verified {
+    color: rgb(93, 0, 255);
+}
+
+
+.topbar {
+    background-color: rgb(139, 68, 226);
+}
+.navbar {
+    box-shadow: 0px 10px 5px rgb(139, 68, 226);
+}
+.navbar a:hover {
+    background-color: rgb(166, 92, 255);
+}
+.navbar a:hover .navbtn {
+    background-color: rgb(166, 92, 255);
+}
+.selected {
+    background-color: rgb(166, 92, 255) !important;
+}
+.selected span {
+    background-color: rgb(166, 92, 255) !important;
+}
+.navbar a:hover div.notif {
+    background-color: rgb(115, 0, 255);
+}
+.notif {
+    background-color: rgb(179, 116, 255);
+}
+
+.make-a-post {
+    background-color: rgb(133, 33, 255);
+}
+.make-a-post:hover {
+    background-color: rgb(115, 0, 255);
+}
+
+.user-profile-top {
+	background-color: rgb(22, 22, 22);
+    color: white;
+}
+.profile-table-user-profile-displayname {
+	color: white;
+}
+
+.user-profile-other {
+	background-color: rgb(22, 22, 22);
+}
+.user-profile-other span {
+	color: rgb(223, 223, 223);
+}
+.user-profile-other b span {
+	color: rgb(71, 71, 71);
+}
+
+.mutual .mutual-displayname {
+	color: rgb(206, 206, 206);
+}
+.mutual:hover {
+    color: rgb(133, 33, 255);
+}
+
+.mutual:hover span {
+    color: rgb(133, 33, 255);
+}
+
+.profile-table-post {
+	background-color: rgb(22, 22, 22);
+}
+.profile-table-post:hover {
+	background-color: rgb(26, 26, 26);
+}
+.pin-info {
+	color: rgb(72, 72, 72);
+}
+.pin-info span {
+	color: rgb(72, 72, 72);
+}
+.profile-table-post .profile-table-post-displayname:hover {
+	color: rgb(133, 33, 255);
+}
+.profile-table-post .profile-table-post-username:hover {
+	color: rgb(133, 33, 255);
+}
+.liked {
+	color: rgb(93, 0, 255) !important;
+}
+.disliked {
+    color: rgb(255, 72, 0) !important;
+}
+.profile-table-post .profile-table-post-btns span:hover {
+	color: rgb(113, 113, 113);
+}
+.profile-table-post .profile-table-post-btns span:hover .btn-icon {
+	color: rgb(113, 113, 113);
+}
+.like:hover {
+	color: rgb(93, 0, 255) !important;
+}
+.dislike:hover {
+    color: rgb(255, 72, 0) !important;
+}
+.like:hover .like {
+	color: rgb(93, 0, 255) !important;
+}
+.dislike:hover .dislike {
+    color: rgb(255, 72, 0) !important;
+}
+.profile-table-post .profile-table-post-extra .extra-username:hover {
+	cursor: pointer;
+	color: rgb(133, 33, 255);
+	text-decoration: underline;
+}
+.profile-table-post .profile-table-post-extra .extra-username {
+	color: rgb(173, 173, 173);
+}
