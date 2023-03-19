@@ -10,10 +10,10 @@ async function aTimer(page) {
             timeout: 5000
         });
         // TODO: do stuff for refresh token later whne implemntation lo
-        if (["loading","auth"].includes(page)) window.location.href = "./home"
+        if (["loading","auth"].includes(page)) window.location.href = "/home"
     } catch (error) {
         if (error.response && error.response.status == 401 && !["auth","404"].includes(page)) {
-            window.location.href = './main';
+            window.location.href = '/main';
         } else {
             console.log(error);
             if (["ECONNABORTED", "ECONNRESET", "ECONNREFUSED", "ETIMEDOUT"].includes(error.code) || error.response.status == 0) {
