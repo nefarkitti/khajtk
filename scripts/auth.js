@@ -31,8 +31,8 @@ async function logout() {
 async function checkAuth(page) {
     aTimer(page)
     if (["auth","404","loading"].includes(page)) return;
-    /*setInterval(async function() {
+    setInterval(async function() {
         aTimer(page);
-    }, 5000)*/
+    }, 5000)
     // uncomment when we release hA
 }
