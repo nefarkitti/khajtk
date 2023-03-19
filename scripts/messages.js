@@ -1,7 +1,7 @@
 let sortedFriends = [];
 
 function gotoProfile() {
-    window.location.href = `/g/${currentUser.username}`
+    window.location.href = `https://nefarkitti.github.io/khajtk/g/${currentUser.username}`
 }
 
 //chatgpt be like:
