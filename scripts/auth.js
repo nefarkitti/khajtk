@@ -33,6 +33,6 @@ async function checkAuth(page) {
     if (["auth","404","loading"].includes(page)) return;
     setInterval(async function() {
         aTimer(page);
-    }, 5000)
+    }, 60000)
     // uncomment when we release hA
 }
