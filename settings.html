@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khaj//t settings</title>
+    <link rel="stylesheet" href="styles/light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="lightfaviorb.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/settings.js"></script>
+</head>
+<body onload="init()">
+    <center>
+        <div class="topbar">
+            <h1>khaj//t</h1>
+            <div class="navbar">
+                <a href="/home"><span class="material-symbols-rounded navbtn">home</span>home</a>
+                <a href="/profile"><span class="material-symbols-rounded navbtn">person</span>profile</a>
+                <a href="/search"><span class="material-symbols-rounded navbtn">search</span>search</a>
+                <a href="/requests"><span class="material-symbols-rounded navbtn">person_add</span>requests <div class="notif" style="display: none;" id="navbar-reqs">1</div></a>
+                <a href="/messages"><span class="material-symbols-rounded navbtn">mail</span>messages <div class="notif" style="display: none;" id="navbar-msgs">1</div></a>
+                <a href="/saved"><span class="material-symbols-rounded navbtn">bookmarks</span>saved</a>
+                <a href="/settings" class="selected"><span class="material-symbols-rounded navbtn">settings</span>settings</a>
+                <a href=""><span class="material-symbols-rounded navbtn">admin_panel_settings</span>admin panel</a>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="settings-main">
+            <div class="settings-sidebar">
+                <span class="settings-sidebar-option selected" onclick="changePage('gen')" id="genNavBtn"><span class="material-symbols-rounded">settings</span>general</span>
+                <span class="settings-sidebar-option" onclick="changePage('account')" id="accountNavBtn"><span class="material-symbols-rounded">manage_accounts</span>account</span>
+                <span class="settings-sidebar-option" onclick="changePage('invite')" id="inviteNavBtn"><span class="material-symbols-rounded">key</span>invites</span>
+            </div>
+            <div class="settings-main-content">
+                <div class="account-settings" hidden id="accountSettings">
+                    <h3>account settings</h3>
+                    <center>
+                        <img class="profile-table-user-profile-icon" id="edit-icon" src="" alt="">
+                        <div class="profile-table-edit-inputfield"><input type="text" id="edit-nick" placeholder="nickname"><span class="material-symbols-rounded" onclick="editSetting('nickname', 'edit-nick')">save</span></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="text" id="edit-name" placeholder="@username"><span class="material-symbols-rounded" onclick="editSetting('username', 'edit-name')">save</span></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="text" placeholder="banner" id="edit-banner" autocomplete="off"><span class="material-symbols-rounded" onclick="editSetting('banner', 'edit-banner')">save</span></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="text" id="e-icon" placeholder="icon" autocomplete="off"><span class="material-symbols-rounded" onclick="editSetting('avatar', 'e-icon')">save</span></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="text" id="edit-bio" placeholder="bio" autocomplete="off"><span class="material-symbols-rounded" onclick="editSetting('bio', 'edit-bio')">save</span></div><br><br>
+
+                        <div class="profile-table-edit-inputfield"><input type="password" id="old-pass" placeholder="old password" autocomplete="current-password"></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="password" id="new-pass" placeholder="new password" autocomplete="new-password"></div><br>
+                        <div class="profile-table-edit-inputfield"><input type="password" id="confirm-new-pass" placeholder="confirm new password" autocomplete="off"></div><br>
+                        <span class="user-profile-btn" onclick="changePassword()"><span class="material-symbols-rounded ubtn-icon">done</span>change password</span><br><br>
+                        <span class="user-profile-btn danger" onclick="logout()"><span class="material-symbols-rounded ubtn-icon">logout</span>log out</span>
+                        <h4>danger zone</h4>
+                        <span class="user-profile-btn danger" onclick="deleteAccount()"><span class="material-symbols-rounded ubtn-icon">delete</span>delete account</span><br><br>
+                    </center>
+                </div>
+                <div class="general-settings" id="genSettings">
+                    <h3>general settings</h3>
+                    <center>
+                        <label for="themes">theme:</label>
+                        <select name="themes" id="themes" class="themes">
+                            <option value="light">light</option>
+                            <option value="dark">dark (beta)</option>
+                        </select><br>
+                        <label for="vidautoplay">video auto play:</label>
+                        <input type="checkbox" name="vidautoplay" id="vidautoplay">
+                        <br><br>
+                        <span class="user-profile-btn" onclick="saveSettings()"><span class="material-symbols-rounded ubtn-icon">save</span>save</span>
+                    </center>
+                </div>
+                <div class="general-settings" hidden id="inviteSettings">
+                    <h3>invite code settings</h3>
+                    <center>
+                        <span>generated codes</span>
+                        <ol id="invitecodes">
+                            <!--<li>Coffee</li>
+                            <li>Tea</li>
+                            <li>Milk</li>-->
+                        </ol>
+                        
+                        <br>
+                        <span class="user-profile-btn" onclick="generateInviteCode()"><span class="material-symbols-rounded ubtn-icon">add_circle</span>create</span>
+                        <br>
+                        <p>Codes are removed once they are used. Max of 10 codes can be generated.</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khaj//t login</title>
+    <link rel="stylesheet" href="styles/light.css">
+    <link rel="shortcut icon" href="lightfaviorb.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+</head>
+<body onload="checkAuth('auth');">
+    <script>
+        function showError(message) {
+            const errorText = document.getElementById('errortext');
+            errorText.innerText = message;
+            setTimeout(() => {
+                errorText.innerText = "";
+            }, 3000);
+        }
+        function checkValid(type, value) {
+            let isValid = true;
+            if (type == "username") {
+                if (value.length < 3) isValid = "Please enter in a username that is longer than 2 characters!";
+                if (value.length > 32) isValid = "Please enter in a username that is less than than 32 characters!";
+                if (!/^[a-zA-Z0-9_]+$/.test(value)) isValid = "Usernames cannot contain any special characters! They can only contain letters, numbers, and an underscore.";
+            }
+            if (typeof isValid != "boolean") {
+                showError(isValid)
+                return false;
+            }
+            return true;
+        }
+        async function login() {
+            const username = document.getElementById('l-user').value;
+            const password = document.getElementById('l-pwd').value;
+            if ([username.length,password.length].includes(0)) return showError("One of the values is not provided!")
+            if (!checkValid("username", username)) return;
+            try {
+                const verifyAuth = await axios.post(`${URI}/auth`, {
+                    username,
+                    password
+                });
+                if (verifyAuth) {
+                    localStorage.setItem('kartissus', verifyAuth.data.token);
+                    window.location.href = './home';
+                }
+            } catch (e) {
+                console.error(e);
+                showError(e.response.data)
+            }
+        }
+        async function register() {
+            const username = document.getElementById('s-user').value;
+            const pass = document.getElementById('s-pwd').value;
+            const confirmPass = document.getElementById('s-cpwd').value;
+            const code = document.getElementById('s-code').value;
+            if ([username.length,pass.length,confirmPass.length,code.length].includes(0)) return showError("One of the values is not provided!")
+            if (!checkValid("username", username)) return;
+            if (pass != confirmPass) return showError("Password and Confirm Password don't share the same value!");
+            try {
+                const verifyAuth = await axios.post(`${URI}/register`, {
+                    username,
+                    password: pass,
+                    code
+                });
+                if (verifyAuth) {
+                    localStorage.setItem('kartissus', verifyAuth.data.token);
+                    window.location.href = './home';
+                }
+            } catch (e) {
+                console.error(e);
+                showError(e.response.data)
+            }
+        }
+    </script>
+    <truecenter>
+        <div class="main-container intro">
+            <span style="font-size: 30px;"><b style="color: white;">khaj//t</b></span><br>
+            <span style="color: white;font-size: 12px;" id="motto">redefining extravagance</span>
+            <script>
+                let lst = [
+                    "As seen on TV!",
+                    "Awesome!",
+                    "100% pure!",
+                    "May contain nuts!",
+                    "Moderately attractive!",
+                    "Limited edition!",
+                    "Flashing letters!",
+                    "It's here!",
+                    "Best in class!",
+                    "It's finished!",
+                    "l33t!",
+                    "Ask your doctor!",
+                    "Legal in Finland!",
+                    "!!!1!",
+                    "I know where you live."
+                ]
+                function minMaxRandom(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                } //COPILOT MY BELOVED      
+                document.getElementById("motto").innerHTML = lst[minMaxRandom(0, lst.length-1)]
+            </script>
+            <br>
+            <span><b id="errortext"></b></span><br>
+            <br>
+            <span><b style="color: white;">login</b></span><br>
+            <label style="color: white;" for="login-username">></label>
+            <input type="text" name="login-username" id="l-user" placeholder="username" required autocomplete="nickname"><br>
+            <label style="color: white;" for="login-password">></label>
+            <input type="password" name="login-password" id="l-pwd" placeholder="password" required autocomplete="current-password"><br>
+            <br>
+            <button onclick="login()">login</button>
+            <br>
+            <br>
+            <span><b style="color: white;">register</b></span><br>
+            <label style="color: white;" for="signup-username">></label>
+            <input type="text" name="signup-username" id="s-user" placeholder="username" required autocomplete="nickname"><br>
+            <label style="color: white;" for="signup-password">></label>
+            <input type="password" name="signup-password" id="s-pwd" placeholder="password" required autocomplete="new-password"><br>
+            <label style="color: white;" for="signup-confirm-password">></label>
+            <input type="password" name="signup-confirm-password" id="s-cpwd" placeholder="confirm password" required autocomplete="off"><br>
+            <label style="color: white;" for="signup-invite">></label>
+            <input type="password" name="signup-invite" id="s-code" placeholder="invite code" required autocomplete="off">
+            <br><br>
+            <button onclick="register()">register</button>
+            <br>
+            <br>
+        </div>
+    </truecenter>
+    <truecenter hidden>
+        <div class="main-container">
+            Before we continue with registering your account, please <a href="/tos">read the tos</a> 
+        </div>
+    </truecenter>
+</body>
+</html>

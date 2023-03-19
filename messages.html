@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khaj//t messages</title>
+    <link rel="stylesheet" href="styles/light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="lightfaviorb.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/messages.js"></script>
+</head>
+<body onload="initMsg()">
+    <center>
+        <div class="topbar">
+            <h1>khaj//t</h1>
+            <div class="navbar">
+                <a href="/home"><span class="material-symbols-rounded navbtn">home</span>home</a>
+                <a href="/profile"><span class="material-symbols-rounded navbtn">person</span>profile</a>
+                <a href="/search"><span class="material-symbols-rounded navbtn">search</span>search</a>
+                <a href="/requests"><span class="material-symbols-rounded navbtn">person_add</span>requests</a>
+                <a href="/messages" class="selected"><span class="material-symbols-rounded navbtn">mail</span>messages</a>
+                <a href="/saved"><span class="material-symbols-rounded navbtn">bookmarks</span>saved</a>
+                <a href="/settings"><span class="material-symbols-rounded navbtn">settings</span>settings</a>
+                <a href=""><span class="material-symbols-rounded navbtn">admin_panel_settings</span>admin panel</a>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="messaging-container">
+            <div class="messages-list" id="user-list">
+                <!--<div class="messages-list-item selected">
+                    <img class="messages-list-item-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                    <span class="messages-list-item-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                    <span class="messages-list-item-username">@mmmmmonster</span><br>
+                    <span class="messages-list-item-lastmsg">you are not kruma so you suck ass go kill yourself dumb woman xdxd</span>
+                </div>
+                <div class="messages-list-item">
+                    <img class="messages-list-item-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                    <span class="messages-list-item-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                    <span class="messages-list-item-username">@mmmmmonster</span><br>
+                    <span class="messages-list-item-lastmsg">you are not kruma so you suck ass go kill yourself dumb woman xdxd</span>
+                </div>-->
+            </div>
+            <div class="messages">
+                <div class="messages-userinfo" id="user-info">
+                    <!--<img class="userinfo-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt=""><br>
+                    <span class="userinfo-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 20px !important;">verified</span></span><br>
+                    <span class="userinfo-username">@mmmmmonster</span>
+                    <div class="messages-profile-btns">
+                        <span class="user-profile-btn"><span class="material-symbols-rounded ubtn-icon">person</span>profile</span>
+                        <span class="user-profile-btn" style="background-color: rgb(255, 91, 91);"><span class="material-symbols-rounded ubtn-icon">person_remove</span>remove friend</span>
+                        <span class="user-profile-btn" style="background-color: rgb(255, 91, 91);"><span class="material-symbols-rounded ubtn-icon">block</span>block</span>
+                    </div>-->
+                </div>
+                <div class="messages-hold" id="messages">
+                    <!--
+                    <div class="left-message">
+                        <img class="leftmsg-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                        <span class="leftmsg-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                        <span class="leftmsg-msg">you suck</span><br>
+                        <span class="leftmsg-timestamp">timestamp</span>
+                    </div>
+                    <div class="right-message">
+                        <span class="rightmsg-msg">no, you suc why does this behave so weirdlyv i have no fucking idea</span><br>
+                        <span class="rightmsg-timestamp">timestamp</span>
+                    </div>
+                    <div class="left-message">
+                        <img class="leftmsg-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                        <span class="leftmsg-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                        <span class="leftmsg-msg">you are not kruma so you suck ass go kill yourself dumb woman xdxd</span><br>
+                        <span class="leftmsg-timestamp">timestamp</span>
+                    </div>
+                    <div class="left-message">
+                        <img class="leftmsg-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                        <span class="leftmsg-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                        <span class="leftmsg-msg">honestly why are you even alive. you don't serve a purpose as you can't even recreate the game amogus without giving up after 5 seconds. come on, you can do better.</span><br>
+                        <span class="leftmsg-timestamp">timestamp</span>
+                    </div>
+                    <div class="right-message">
+                        <span class="rightmsg-msg">you kno what kart, you're right. i think from now on i'll try to not disregard other projects in favour of a new hyperfixiation, instead focusing on actually finishing something, to not disappoint those around me.</span><br>
+                        <span class="rightmsg-timestamp">timestamp</span>
+                    </div>
+                    <div class="left-message">
+                        <img class="leftmsg-icon" src="https://cdn.discordapp.com/attachments/809469073590190130/1055968281544106045/1b42c81038cddcd9c94e55767d022efc.png" alt="">
+                        <span class="leftmsg-displayname"><b>Kartinmat</b><span class="material-symbols-rounded verified" style="font-size: 15px !important;">verified</span></span><br>
+                        <span class="leftmsg-msg">Good. End your life.</span><br>
+                        <span class="leftmsg-timestamp">timestamp</span>
+                    </div>-->
+                </div>
+                <label for="msginpt">></label>
+                <input name="msginpt" type="text" id="chat-input" autocomplete="off" placeholder="Enter in a message.">
+            </div>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khaj//t home</title>
+    <link rel="stylesheet" href="styles/light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="lightfaviorb.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/profile.js"></script>
+</head>
+<body onload="initMyProfile()">
+    <button class="make-a-post" id="postbtn" onclick="togglePostPopup()"><span class="material-symbols-rounded">add_comment</span> make a post</button>
+    <div class="overlaybg" id="showoverlay" hidden onclick="togglePostPopup()"></div>
+    <truecenter class="popup" id="popup" hidden>
+    </truecenter>
+    <center>
+        <div class="topbar">
+            <h1>khaj//t</h1>
+            <div class="navbar">
+                <a href="/home"><span class="material-symbols-rounded navbtn">home</span>home</a>
+                <a href="/profile"  class="selected"><span class="material-symbols-rounded navbtn">person</span>profile</a>
+                <a href="/search"><span class="material-symbols-rounded navbtn">search</span>search</a>
+                <a href="/requests"><span class="material-symbols-rounded navbtn">person_add</span>requests <div class="notif" style="display: none;" id="navbar-reqs">1</div></a>
+                <a href="/messages"><span class="material-symbols-rounded navbtn">mail</span>messages <div class="notif" style="display: none;" id="navbar-msgs">1</div></a>
+                <a href="/saved"><span class="material-symbols-rounded navbtn">bookmarks</span>saved</a>
+                <a href="/settings"><span class="material-symbols-rounded navbtn">settings</span>settings</a>
+                <a href=""><span class="material-symbols-rounded navbtn">admin_panel_settings</span>admin panel</a>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <table class="profile-table">
+            <tr>
+              <td class="profile-table-user-section"> <!-- profile -->
+                <div class="profile-table-container">
+                    <div class="profile-table-user-profile">
+                        <div class="user-profile-top" hidden id="edit-view"> <!-- editing -->
+                            <img class="profile-table-user-profile-icon" id="edit-icon" src="" alt="">
+                            <div class="profile-table-edit-inputfield"><input type="text" name="" placeholder="nickname" id="edit-nick" autocomplete="off"><span class="material-symbols-rounded btn-color" onclick="editSetting('nickname', 'edit-nick')">save</span></div><br>
+                            <div class="profile-table-edit-inputfield"><input type="text" name="" placeholder="@username" id="edit-name" autocomplete="off"><span class="material-symbols-rounded btn-color" onclick="editSetting('username', 'edit-name')">save</span></div><br>
+                            <div class="profile-table-edit-inputfield"><input type="text" name="" placeholder="banner" id="edit-banner" autocomplete="off"><span class="material-symbols-rounded btn-color" onclick="editSetting('banner', 'edit-banner')">save</span></div><br>
+                            <div class="profile-table-edit-inputfield"><input type="text" name="" placeholder="icon" id="e-icon" autocomplete="off"><span class="material-symbols-rounded btn-color" onclick="editSetting('avatar', 'e-icon')">save</span></div><br>
+                            <div class="profile-table-edit-inputfield"><input type="text" rows="5" name="" id="edit-bio" placeholder="biography" autocomplete="off"><span class="material-symbols-rounded btn-color" onclick="editSetting('bio', 'edit-bio')">save</span></div><br>
+                            <span class="user-profile-btn" onclick="toggleEditing()"><span class="material-symbols-rounded ubtn-icon">done</span>stop editing</span>
+                        </div>
+                        <div class="user-profile-top" id="profile-view">
+                            <img class="profile-table-user-profile-icon" id="p-icon" src="" alt="">
+                            <span class="profile-table-user-profile-displayname" id="p-display"></span><br>
+                            <span class="profile-table-user-profile-username" id="p-username"></span><br>
+                            <div class="profile-table-user-profile-btns">
+                                <span onclick="toggleEditing()" class="user-profile-btn"><span class="material-symbols-rounded ubtn-icon">edit</span>edit</span>
+                                <span style="background-color: rgb(159, 53, 53);" class="user-profile-btn" onclick="logout()"><span class="material-symbols-rounded ubtn-icon">logout</span>log out</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="user-profile-other">
+                            <!--<b><span class="title">bio</span></b><br><br>-->
+                            <span id="p-bio"></span><br>
+                            <hr style="color: rgb(80, 80, 80);">
+                            <span style="color: rgb(149, 149, 149);" id="p-stats">joined: | 0 friends | 0 posts</span><br>
+                        </div>
+                        <div class="user-profile-other" hidden>
+                            <!--<b><span class="title">biography</span></b><br><br>-->
+                            <span>
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis sapien tincidunt, vehicula diam eget, lacinia augue. Mauris vitae est eu ex eleifend accumsan ut eget nibh. Fusce pharetra sagittis pellentesque. Morbi elit ipsum, blandit at pulvinar in, tincidunt non tortor. Nulla auctor, risus vel eleifend pulvinar, tortor nibh semper urna, eu dictum lorem magna ut nisl. Curabitur placerat vestibulum rutrum. Cras euismod id nulla vitae mattis. Sed laoreet sit amet justo vel aliquet. Pellentesque eu egestas diam.
+                                
+                                Vestibulum vehicula tortor at ante mattis varius. Sed ut sollicitudin enim, nec facilisis eros. Maecenas a tincidunt neque. Proin porttitor ligula at elementum pharetra. Nam vel pellentesque erat, nec convallis neque. Nulla vel turpis semper, finibus augue in, pellentesque purus. Phasellus malesuada semper metus at volutpat.
+                                
+                                Etiam pharetra justo ac nisl sollicitudin, ac aliquam mi iaculis. Aenean at ipsum vel dui ullamcorper pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam lacus quam, pharetra ut quam sit amet, egestas mollis leo. Duis quis sapien sollicitudin, viverra elit non, egestas massa. Morbi sed velit id quam hendrerit porttitor. Phasellus sollicitudin ultricies est sit amet laoreet. Vestibulum maximus libero nec velit sodales dapibus. Suspendisse vestibulum purus dapibus ipsum porta hendrerit. Nullam non orci maximus, mattis justo vitae, pulvinar mauris.
+                                
+                                In vitae ipsum eget orci aliquam fermentum eget et quam. Sed gravida pretium accumsan. Nam ullamcorper elit et libero venenatis, nec tincidunt risus sollicitudin. Maecenas imperdiet elit metus. Pellentesque in odio imperdiet, suscipit eros quis, ullamcorper elit. Nam laoreet velit arcu, gravida sodales diam auctor ut. Nam cursus tincidunt turpis, vel consectetur eros elementum quis. Curabitur vel tincidunt risus, ac tempus mi. Nullam eget interdum dolor. Curabitur ac massa at neque cursus egestas interdum ac tellus. Vestibulum et suscipit ipsum.
+                                
+                                Donec venenatis sapien quis quam lacinia elementum. Pellentesque condimentum mollis mauris quis varius. Nulla molestie lectus sit amet felis porta, vel consequat ipsum lacinia. Aliquam erat volutpat. Morbi et vehicula odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vitae ullamcorper nunc. Nullam vel egestas sapien, tincidunt sollicitudin augue. Donec non lobortis augue. Pellentesque imperdiet, diam suscipit dictum vulputate, arcu tellus elementum ligula, eget maximus dui lectus sed dolor. </span>
+                        </div>
+                    </div>
+                </div>
+              </td> <!-- profile -->
+              <td class="profile-table-posts-section"> <!-- posts -->
+                <div class="profile-table-container">
+                    <span hidden>You cannot view this user's posts or post on this user's profile, either something has gone wrong or you've been blocked by them.</span>
+                    <div class="profile-table-posts" id="all-posts">
+                    </div>
+                </div>
+              </td> <!-- posts -->
+            </tr>
+          </table> 
+    </center>
+</body>
+</html>
