@@ -74,7 +74,7 @@ function init404() {
             break;
         }
         case 'post': {
-            content404.inenrHTML = `<br><br>
+            content404.innerHTML = `<br><br>
             <div class="profile-table-posts-section"> 
                 <div class="profile-table-container" id="postsTable" hidden> <!-- posts -->
                     
