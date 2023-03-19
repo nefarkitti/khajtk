@@ -91,7 +91,7 @@ function genItem(userData, showFriendButtons) {
     infoBtn.classList.add("user-profile-btn");
     infoBtn.innerHTML = `<span class="material-symbols-rounded ubtn-icon">person</span>info`
     infoBtn.onclick = function() {
-        window.location.href = `/g/${userData.username}`;
+        window.location.href = `https://nefarkitti.github.io/khajtk/g/${userData.username}`;
     }
     btns.appendChild(infoBtn);
     console.log(showFriendButtons)
