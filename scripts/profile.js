@@ -230,10 +230,10 @@ async function initProfile() {
     checkAuth('home')
     initNav()
     const profileTable = document.getElementById('profile-table')
-    if (!profileTable) window.location.href = "/";
+    if (!profileTable) window.location.href = "https://nefarkitti.github.io/khajtk/";
     
     try {
-        const userName = location.pathname.split("/")[2];
+        const userName = location.pathname.split("/")[3];
         const getUserData = await axios({
             url: `${URI}/api/user/${userName}`,
             method: "GET",
@@ -444,7 +444,7 @@ async function toggleBlock() {
         });
         alert(`Successfully ${currentUser.didIblock ? "un" : ""}blocked the user!`)
         if (!currentUser.didIblock) {
-            window.location.href = "/home"
+            window.location.href = "https://nefarkitti.github.io/khajtk/home"
         } else {
             window.location.reload();
         }
@@ -555,7 +555,7 @@ function genPostItem(postData, type, reply) {
         div.onclick = function(e) {
             if ([`profile-post-${postData.ID}`].includes(e.target.id)) {
                 //alert("click")
-                window.location.href = `/post/${postData.ID}`
+                window.location.href = `https://nefarkitti.github.io/khajtk/post/${postData.ID}`
             }
         }
     }
@@ -674,7 +674,7 @@ function genPostItem(postData, type, reply) {
     pIcon.classList.add("profile-table-post-usericon")
     pIcon.src = getIcon(postData.avatar)
     const pIconClick = document.createElement('a');
-    pIconClick.href = `/g/${postData.username}`
+    pIconClick.href = `https://nefarkitti.github.io/khajtk/g/${postData.username}`
     pIconClick.appendChild(pIcon)
     div.appendChild(pIconClick);
 
@@ -683,7 +683,7 @@ function genPostItem(postData, type, reply) {
     pDisplay.innerText = postData.nickname;
     if (postData.verified) pDisplay.innerHTML += `<span class="material-symbols-rounded verified" title="Verified Account">verified</span>`
     const pDisplayClick = document.createElement('a');
-    pDisplayClick.href = `/g/${postData.username}`
+    pDisplayClick.href = `https://nefarkitti.github.io/khajtk/g/${postData.username}`
     pDisplayClick.appendChild(pDisplay)
 
     div.appendChild(pDisplayClick);
@@ -693,7 +693,7 @@ function genPostItem(postData, type, reply) {
     pUser.classList.add("profile-table-post-username")
     pUser.innerText = `@${postData.username}`;
     const pUserClick = document.createElement('a');
-    pUserClick.href = `/g/${postData.username}`
+    pUserClick.href = `https://nefarkitti.github.io/khajtk/g/${postData.username}`
     pUserClick.appendChild(pUser)
 
     div.appendChild(pUserClick);
@@ -925,7 +925,7 @@ function genPostItem(postData, type, reply) {
         pIcon.classList.add("profile-table-friendreplies-usericon")
         pIcon.src = getIcon(replyData.avatar)
         const pIconClick = document.createElement('a');
-        pIconClick.href = `/g/${replyData.username}`
+        pIconClick.href = `https://nefarkitti.github.io/khajtk/g/${replyData.username}`
         pIconClick.appendChild(pIcon);
         replyDiv.appendChild(pIconClick);
         const pDisplay = document.createElement("span")
@@ -933,7 +933,7 @@ function genPostItem(postData, type, reply) {
         pDisplay.innerText = replyData.nickname;
         if (replyData.verified) pDisplay.innerHTML += `<span class="material-symbols-rounded verified" title="Verified Account">verified</span>`
         const pDisplayClick = document.createElement('a');
-        pDisplayClick.href = `/g/${replyData.username}`
+        pDisplayClick.href = `https://nefarkitti.github.io/khajtk/g/${replyData.username}`
         pDisplayClick.appendChild(pDisplay)
         replyDiv.appendChild(whitespace());
         replyDiv.appendChild(pDisplayClick);
@@ -1093,7 +1093,7 @@ function profile(userData) {
             userData.mutuals.forEach(mutual => {
                 const mutualDiv = document.createElement("div");
                 const aLink = document.createElement("a");
-                aLink.href = `/g/${mutual.username}`
+                aLink.href = `https://nefarkitti.github.io/khajtk/g/${mutual.username}`
                 mutualDiv.className = "mutual";
                 const mIcon = document.createElement("img");
                 mIcon.src = getIcon(mutual.avatar)
