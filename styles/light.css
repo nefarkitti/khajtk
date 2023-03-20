@@ -3,10 +3,12 @@
 * {
     font-family: 'Inter', sans-serif;
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 
 .btn-color {
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 
 .overlaybg {
@@ -18,6 +20,7 @@
     z-index: 998;
     height: 100%;
     width: 100%;
+word-wrap: anywhere;
 }
 
 /** {
@@ -30,23 +33,29 @@
     display: flex !important;
     word-wrap: none;
     filter: sepia(100%);
+word-wrap: anywhere;
 }*/
 
 h1 {
     color: white;
+word-wrap: anywhere;
 }
 
 .like:hover {
     color: rgb(255, 0, 162) !important;
+word-wrap: anywhere;
 }
 .like:hover .like {
     color: rgb(255, 0, 162) !important;
+word-wrap: anywhere;
 }
 .dislike:hover {
     color: rgb(0, 145, 255) !important;
+word-wrap: anywhere;
 }
 .dislike:hover .dislike {
     color: rgb(0, 145, 255) !important;
+word-wrap: anywhere;
 }
 .liked {
     color: rgb(255, 0, 162) !important;
@@ -72,6 +81,7 @@ body {
     background: rgb(245, 245, 245);
     
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 .verified {
     color: rgb(255, 133, 222);
@@ -89,26 +99,32 @@ truecenter {
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
+word-wrap: anywhere;
 }
 
 hr {
     clear: both;
+word-wrap: anywhere;
 }
 
 ::placeholder {
     color: rgb(16, 16, 16);
+word-wrap: anywhere;
 }
 a {
     text-decoration: none;
+word-wrap: anywhere;
 }
 a:hover {
     cursor: pointer;
+word-wrap: anywhere;
 }
 
 .timestamp {
     float: right;
     color: rgb(95, 95, 95);
     user-select: none;
+word-wrap: anywhere;
 }
 
 .pin-info {
@@ -116,12 +132,14 @@ a:hover {
     font-size: 15px;
     margin-bottom: 0.5rem;
     color: rgb(25, 25, 25);
+word-wrap: anywhere;
 }
 .pin {
     font-size: 20px !important;
     display: inline;
     vertical-align: bottom;
     color: rgb(25, 25, 25);
+word-wrap: anywhere;
 }
 
 .topbar {
@@ -132,15 +150,18 @@ a:hover {
     top: 0;
     padding-bottom: 0.5rem;
     user-select: none;
+word-wrap: anywhere;
 }
 .navbar {
     box-shadow: 0px 10px 5px rgb(255, 133, 222);
     padding-bottom: 0.5rem;
+word-wrap: anywhere;
 }
 .navbar a {
     display: inline;
     padding: 0.2rem;
     color: white;
+word-wrap: anywhere;
 }
 .navbar a .navbtn {
     margin-right: 0.1rem;
@@ -148,20 +169,24 @@ a:hover {
     vertical-align: bottom;
     font-size: 20px;
     color: white;
+word-wrap: anywhere;
 }
 .navbar a.selected {
     border-radius: 5px;
     color: rgb(255, 255, 255);
     background-color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 .navbar a.selected .navbtn {
     color: rgb(255, 255, 255);
     background-color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 .navbar a:hover {
     border-radius: 5px;
     color: rgb(255, 255, 255);
     background-color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 .navbar a:hover .navbtn {
     color: rgb(255, 255, 255);
@@ -172,6 +197,7 @@ a:hover {
 .navbar a:hover div.notif {
     color: rgb(255, 255, 255);
     background-color: rgb(255, 0, 162);
+word-wrap: anywhere;
 }
 .notif {
     border-radius: 100%;
@@ -185,6 +211,7 @@ a:hover {
     text-align: center;
     justify-content: center;
     align-items: center;
+word-wrap: anywhere;
 }
 
 div.main-container {
@@ -197,19 +224,24 @@ div.main-container {
     height: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
+word-wrap: anywhere;
 }
 div.main-container a {
     color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 div.main-container a:visited {
     color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 div.main-container a:hover {
     color: rgb(255, 163, 230);
     text-decoration: underline;
+word-wrap: anywhere;
 }
 div.main-container img {
     image-rendering:optimizeQuality;
+word-wrap: anywhere;
 }
 
 div.main-container input[type=text] {
@@ -220,6 +252,7 @@ div.main-container input[type=text] {
     border-radius: 5px;
     margin-bottom: 0.1rem;
     margin-top: 0.1rem;
+word-wrap: anywhere;
 }
 div.main-container input[type=password] {
     border: none;
@@ -229,14 +262,17 @@ div.main-container input[type=password] {
     border-radius: 5px;
     margin-bottom: 0.1rem;
     margin-top: 0.1rem;
+word-wrap: anywhere;
 }
 div.main-container input[type=text]:focus-visible {
     outline: none;
     border: none;
+word-wrap: anywhere;
 }
 div.main-container input[type=password]:focus-visible {
     outline: none;
     border: none;
+word-wrap: anywhere;
 }
 
 div.main-container input[type=text]:focus-visible::placeholder {
@@ -244,6 +280,7 @@ div.main-container input[type=text]:focus-visible::placeholder {
 }
 div.main-container input[type=password]:focus-visible::placeholder {
     color: rgb(21, 21, 21);
+word-wrap: anywhere;
 }
 
 span.save {
@@ -251,10 +288,12 @@ span.save {
     font-size: 20px;
     user-select: none;
     margin-left: 0.3rem;
+word-wrap: anywhere;
 }
 span.save:hover {
     color: rgb(255, 255, 255);
     cursor: pointer;
+word-wrap: anywhere;
 }
 button {
     border-radius: 5px;
@@ -267,6 +306,7 @@ button:hover {
     cursor: pointer;
     background-color: rgb(255, 163, 230);
     color: rgb(255, 255, 255);
+word-wrap: anywhere;
 }
 
 table.profile-table {
@@ -274,45 +314,55 @@ table.profile-table {
     width: 95%;
     justify-content: center;
     text-align: center;
+word-wrap: anywhere;
 }
 table.profile-table tr td {
     min-width: 50%;
     max-width: 50%;
+word-wrap: anywhere;
 }
 table.profile-table tr td.profile-table-container {
     width: 50%;
     height: fit-content;
+word-wrap: anywhere;
 }
 
 .thumb {
     font-size: 15px !important;
+word-wrap: anywhere;
 }
 .mutual {
     text-align: left;
     margin-bottom: 0.2rem;
     user-select: none;
     width: fit-content;
+word-wrap: anywhere;
 }
 
 .mutual .mutual-displayname {
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 .mutual .mutual-username {
     color: rgb(121, 121, 121);
+word-wrap: anywhere;
 }
 .mutual:hover span {
     color: rgb(255, 163, 230);
+word-wrap: anywhere;
 }
 .mutual:hover {
     color: rgb(255, 163, 230);
     text-decoration: underline;
     cursor: pointer;
+word-wrap: anywhere;
 }
 .mutual img {
     vertical-align: bottom;
     border-radius: 5px;
     width: 20px;
     height: 20px;
+word-wrap: anywhere;
 }
 
 .profile-table-user-section {
@@ -320,6 +370,7 @@ table.profile-table tr td.profile-table-container {
     text-align: left;
     justify-content: center;
     display: contents;
+word-wrap: anywhere;
 }
 .user-profile-top {
     border-radius: 10px;
@@ -332,36 +383,44 @@ table.profile-table tr td.profile-table-container {
     background-repeat: no-repeat;
     background-origin: border-box;
     filter:blur(50%);
+word-wrap: anywhere;
 }
 .user-profile-other {
     padding: 1rem;
     background-color: rgb(231, 231, 231);
     border-radius: 10px;
     margin-bottom: 1rem;
+word-wrap: anywhere;
 }
 .user-profile-other span {
     color: rgb(6, 6, 6);
+word-wrap: anywhere;
 }
 .user-profile-other b span {
     color: rgb(28, 28, 28);
+word-wrap: anywhere;
 }
 .profile-table-user-profile-icon {
     border-radius: 5px;
     width: 100px;
     height: 100px;
     float: left;
+word-wrap: anywhere;
 }
 .profile-table-user-profile-displayname {
     margin-left: 0.5rem;
     font-size: 35px;
+word-wrap: anywhere;
 }
 .profile-table-user-profile-username {
     color: rgb(95, 95, 95);
     margin-left: 0.5rem;
+word-wrap: anywhere;
 }
 .profile-table-user-profile-btns {
     margin-left: 7rem;
     margin-top: 0.7rem;
+word-wrap: anywhere;
 }
 .profile-table-post-friendreplies-reply {
     height: fit-content;
@@ -372,35 +431,42 @@ table.profile-table tr td.profile-table-container {
     border-radius: 5px;
     text-overflow: ellipsis;
     margin-bottom: 0.2rem;
+word-wrap: anywhere;
 }
 .profile-table-post-friendreplies-reply:hover {
     background-color: rgb(247, 247, 247);
     cursor: pointer;
+word-wrap: anywhere;
 }
 
 .profile-table-post-friendreplies-reply .verified {
     vertical-align: text-bottom;
     color: rgb(255, 133, 222);
+word-wrap: anywhere;
 }
 .profile-table-post-friendreplies span {
     color: rgb(131, 131, 131);
+word-wrap: anywhere;
 }
 .profile-table-friendreplies-usericon {
     border-radius: 3px;
     width: 1.5rem;
     height: 1.5rem;
     vertical-align: middle;
+word-wrap: anywhere;
 }
 .profile-table-friendreplies-displayname {
     font-size: 18px;
     margin-left: 0.2rem;
     vertical-align: middle;
     color:black !important;
+word-wrap: anywhere;
 }
 .profile-table-friendreplies-contents {
     vertical-align: middle;
     font-size: 14px;
     color: rgb(90, 90, 90) !important;
+word-wrap: anywhere;
 }
 
 .user-profile-btn {
@@ -410,12 +476,14 @@ table.profile-table tr td.profile-table-container {
     font-size: 12px;
     vertical-align:middle;
     color: rgb(45, 45, 45);
+word-wrap: anywhere;
 }
 .user-profile-btn:hover {
     background-color: rgb(238, 238, 238);
     cursor: pointer;
     user-select: none;
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 .user-profile-btn:hover span {
     color: rgb(0, 0, 0);
@@ -427,15 +495,18 @@ table.profile-table tr td.profile-table-container {
     font-size: 20px;
     vertical-align:middle;
     margin-right: 0.2rem;
+word-wrap: anywhere;
 }
 
 
 .profile-table-posts-section {
     padding: 0.5rem;
     padding-top: 0;
+word-wrap: anywhere;
 }
 div.profile-table-posts-section {
     max-width: 60%;
+word-wrap: anywhere;
 }
 
 .profile-table-makepost {
@@ -443,6 +514,7 @@ div.profile-table-posts-section {
     width: 100%;
     height: fit-content;
     margin-bottom: 0.5rem;
+word-wrap: anywhere;
 }
 .profile-table-makepost textarea {
     width: 100%;
@@ -450,11 +522,13 @@ div.profile-table-posts-section {
     background-color: rgb(217, 217, 217);
     resize: none;
     border-radius: 5px;
+word-wrap: anywhere;
 }
 
 .title {
     font-size: 30px;
     text-decoration: underline;
+word-wrap: anywhere;
 }
 
 .profile-table-edit-inputfield {
@@ -462,19 +536,23 @@ div.profile-table-posts-section {
     text-align: left;
     margin-bottom: 0.5rem;
     margin-left: 0.5rem;
+word-wrap: anywhere;
 }
 .profile-table-edit-inputfield input {
     border-radius: 5px;
     padding: 0.2rem;
     background-color: rgb(213, 213, 213);
     border: 0;
+word-wrap: anywhere;
 }
 .profile-table-edit-inputfield input::placeholder {
     color: black;
+word-wrap: anywhere;
 }
 .profile-table-edit-inputfield input:focus-visible {
     border: 0;
     outline: 0;
+word-wrap: anywhere;
 }
 .profile-table-edit-inputfield span {
     /*color: rgb(223, 223, 223);*/
@@ -486,6 +564,7 @@ div.profile-table-posts-section {
     margin-left: 0.2rem;
     border-radius: 5px;
     padding: 0.1rem;
+word-wrap: anywhere;
 }
 .profile-table-edit-inputfield span:hover {
     color: rgb(255, 255, 255);
@@ -511,6 +590,7 @@ div.profile-table-posts-section {
 }
 .profile-table-post:hover {
     background-color: rgb(219, 219, 219);
+word-wrap: anywhere;
 }
 
 .profile-table-post hr {
@@ -518,6 +598,7 @@ div.profile-table-posts-section {
     clear: both;
     width: 90%;
     margin-top: 3.5rem;
+word-wrap: anywhere;
 }
 
 .profile-table-post .profile-table-post-more {
@@ -525,11 +606,13 @@ div.profile-table-posts-section {
     user-select: none;
     text-align: right;
     display: inline !important;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-more span.m:hover {
     background-color: rgb(158, 158, 158);
     border-radius: 100%;
     cursor: pointer;
+word-wrap: anywhere;
 }
 .list-item {
     border-radius: 5px;
@@ -537,17 +620,21 @@ div.profile-table-posts-section {
     padding: 0.3rem;
     margin-bottom: 0.1rem;
     text-align: left;
+word-wrap: anywhere;
 }
 .red {
     background-color: rgb(182, 116, 116);
     color: rgb(78, 14, 14);
+word-wrap: anywhere;
 }
 .red span {
     color: rgb(78, 14, 14);
+word-wrap: anywhere;
 }
 .list-item:hover {
     background-color: rgb(155, 155, 155);
     cursor: pointer;
+word-wrap: anywhere;
 }
 .profile-table-post-more-list {
     margin-top: 0.2rem;
@@ -556,20 +643,24 @@ div.profile-table-posts-section {
     padding: 0.4rem;
     border-radius: 10px;
     background-color: rgb(209, 209, 209);
+word-wrap: anywhere;
 }
 .post {
     right: 20.5vw;
+word-wrap: anywhere;
 }
 
 .profile-table-post-more-list div span {
     text-align: left;
     width: fit-content;
     clear: both;
+word-wrap: anywhere;
 }
 .profile-table-post-more-list div span span.listbtn {
     font-size: 20px;
     vertical-align: bottom;
     display: inline;
+word-wrap: anywhere;
 }
 
 .profile-table-post .profile-table-post-usericon {
@@ -577,6 +668,7 @@ div.profile-table-posts-section {
     width: 60px;
     height: 60px;
     float: left;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-displayname {
     display: inline-block;
@@ -585,11 +677,13 @@ div.profile-table-posts-section {
     text-overflow: ellipsis;
     max-width: 50%;
     overflow: hidden;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-displayname:hover {
     cursor: pointer;
     color: rgb(255, 163, 230);
     text-decoration: underline;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-username {
     color: rgb(105, 105, 105);
@@ -599,11 +693,13 @@ div.profile-table-posts-section {
     text-overflow: ellipsis;
     max-width: 35%;
     overflow: hidden;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-username:hover {
     cursor: pointer;
     color: rgb(255, 163, 230);
     text-decoration: underline;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-extra {
     color: rgb(130, 130, 130);
@@ -614,23 +710,28 @@ div.profile-table-posts-section {
     max-width: 35%;
     overflow: hidden;
     margin-top: 0.2rem;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-extra .extra-username {
     color: rgb(0, 0, 0);
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-extra .extra-username:hover {
     cursor: pointer;
     color: rgb(255, 163, 230);
     text-decoration: underline;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-contents {
     margin-top: 1rem;
     margin-bottom: 1rem;
     float: left;
     clear: left;
+word-wrap: anywhere;
 }
 .tagged {
     filter: contrast(0%);
+word-wrap: anywhere;
 }
 .profile-table-post-attachments {
     overflow: hidden;
@@ -639,6 +740,7 @@ div.profile-table-posts-section {
     float: left;
     clear: left;
     margin-bottom: 1rem;
+word-wrap: anywhere;
 }
 .profile-table-post-attachments .content-warning {
     overflow: hidden;
@@ -652,6 +754,7 @@ div.profile-table-posts-section {
     background-color: rgb(29, 29, 29);
     border-radius: 5px;
     user-select: none;
+word-wrap: anywhere;
 }
 
 .profile-table-post-attachments .content-warning .container {
@@ -659,18 +762,22 @@ div.profile-table-posts-section {
     text-align: center;
     align-items: center;
     justify-content: center;
+word-wrap: anywhere;
 }
 .profile-table-post-attachments .content-warning span.material-symbols-rounded {
     color: white;
     margin-bottom: 1rem;
     font-size: 50px;
+word-wrap: anywhere;
 }
 .profile-table-post-attachments .content-warning span {
     color: white;
+word-wrap: anywhere;
 }
 .profile-table-post-attachments .content-warning button {
     margin-top: 1rem;
     color: white;
+word-wrap: anywhere;
 }
 
 .profile-table-post-attachments img {
@@ -678,35 +785,42 @@ div.profile-table-posts-section {
     max-width: 45%;
     float: left;
     clear: left;
+word-wrap: anywhere;
 }
 .profile-table-post-attachments video {
     border-radius: 5px;
     max-width: 70%;
     float: left;
     clear: left;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-btns {
     float: left;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-btns span {
     user-select: none;
     color: rgb(48, 48, 48);
     display: inline;
     font-size: 15px;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-btns span .btn-icon {
     vertical-align: bottom;
     font-size: 19px;
     margin-right: 0.2rem;
+word-wrap: anywhere;
 }
 
 .profile-table-post .profile-table-post-btns span:hover {
     color: rgb(0, 0, 0);
     cursor: pointer;
+word-wrap: anywhere;
 }
 .profile-table-post .profile-table-post-btns span:hover .btn-icon {
     color: rgb(0, 0, 0);
     cursor: pointer;
+word-wrap: anywhere;
 }
 
 .popup {
@@ -715,6 +829,7 @@ div.profile-table-posts-section {
 }
 .main {
     filter: contrast(-1);
+word-wrap: anywhere;
 }
 
 /*div.popup {
@@ -723,6 +838,7 @@ div.profile-table-posts-section {
     padding-bottom: 1rem;
     padding-top: 1rem;
     text-align: center;
+word-wrap: anywhere;
 }
 div.popup .customization-main input {
     border: none;
@@ -730,6 +846,7 @@ div.popup .customization-main input {
 }
 div.popup .customization-main input:focus-visible {
     border: none;
+word-wrap: anywhere;
 }
 div.popup .customization-main label {
     border: none;
@@ -737,11 +854,13 @@ div.popup .customization-main label {
 }*/
 textarea {
     border: none;
+word-wrap: anywhere;
 }
 
 div.messaging-container {
     width: 65%;
     height: 70%;
+word-wrap: anywhere;
 }
 
 div.messages-list {
@@ -750,10 +869,12 @@ div.messages-list {
     height: 100%;
     width: 25%;
     overflow-x: scroll;
+word-wrap: anywhere;
 }
 
 div.messages-list-item.selected {
     background-color: rgb(96, 186, 255) !important;
+word-wrap: anywhere;
 }
 div.messages-list-item {
     width: 97%;
@@ -770,25 +891,30 @@ div.messages-list-item {
     box-sizing: border-box;         /* Opera/IE 8+ */
     /*border-left: 0.2rem solid rgb(128, 0, 255);*/
     border-radius: 5px;
+word-wrap: anywhere;
 }
 div.messages-list-item:hover {
     background-color: rgb(152, 152, 152);
     cursor: pointer;
+word-wrap: anywhere;
 }
 img.messages-list-item-icon {
     width: 2.5rem;
     height: 2.5rem;
     float: left;
     border-radius: 10px;
+word-wrap: anywhere;
 }
 span.messages-list-item-displayname {
     font-size: 15px;
     margin-left: 0.3rem;
+word-wrap: anywhere;
 }
 span.messages-list-item-username {
     color: rgb(78, 78, 78);
     font-size: 9px;
     margin-left: 0.3rem;
+word-wrap: anywhere;
 }
 span.messages-list-item-lastmsg {
     display: ruby;
@@ -798,6 +924,7 @@ span.messages-list-item-lastmsg {
     text-overflow: ellipsis;
     max-width: 70%;
     overflow: hidden;
+word-wrap: anywhere;
 }
 
 div.messages {
@@ -807,6 +934,7 @@ div.messages {
     width: 75%;
     justify-content: center;
     text-align: center;
+word-wrap: anywhere;
 }
 
 div.messages-userinfo {
@@ -818,12 +946,14 @@ div.messages-userinfo {
     width: fit-content;
     padding-left: 3rem;
     padding-right: 3rem;
+word-wrap: anywhere;
 }
 div.messages-userinfo img {
     width: 4rem;
     height: 4rem;
     clear: both;
     border-radius: 5px;
+word-wrap: anywhere;
 }
 
 div.messages input {
@@ -832,14 +962,17 @@ div.messages input {
     padding: 0.2rem;
     border-radius: 5px;
     background-color: rgb(189, 189, 189);
+word-wrap: anywhere;
 }
 div.messages input[type=text]:focus-visible {
     color: rgb(0, 0, 0);
     outline: none;
     border: none;
+word-wrap: anywhere;
 }
 div.messages label {
     margin-left: 1rem;
+word-wrap: anywhere;
 }
 
 div.messages-hold {
@@ -850,6 +983,7 @@ div.messages-hold {
     text-align: left;
     overflow-x: scroll;
     border-radius: 10px;
+word-wrap: anywhere;
 }
 
 div.left-message {
@@ -864,6 +998,7 @@ div.left-message {
     padding-right: 1rem;
     max-width: 50%;
     min-width: 30%;
+word-wrap: anywhere;
 }
 
 div.left-message img.leftmsg-icon {
@@ -872,14 +1007,17 @@ div.left-message img.leftmsg-icon {
     height: 3rem;
     margin-right: 0.3rem;
     float: left;
+word-wrap: anywhere;
 }
 span.leftmsg-displayname {
     float: left;
     font-size: 15px;
+word-wrap: anywhere;
 }
 
 span.leftmsg-msg {
     font-size: 12px;
+word-wrap: anywhere;
 }
 
 span.leftmsg-timestamp {
@@ -887,6 +1025,7 @@ span.leftmsg-timestamp {
     filter: opacity(50%);
     user-select: none;
     float: right;
+word-wrap: anywhere;
 }
 
 div.right-message {
@@ -900,10 +1039,12 @@ div.right-message {
     border-radius: 20px;
     max-width: 50%;
     min-width: 30%;
+word-wrap: anywhere;
 }
 
 span.rightmsg-msg {
     font-size: 12px;
+word-wrap: anywhere;
 }
 
 span.rightmsg-timestamp {
@@ -911,11 +1052,13 @@ span.rightmsg-timestamp {
     font-size: 10px;
     filter: opacity(50%);
     user-select: none;
+word-wrap: anywhere;
 }
 
 .messages-profile-btns {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+word-wrap: anywhere;
 }
 
 .requests-list {
@@ -923,6 +1066,7 @@ span.rightmsg-timestamp {
     grid-template-columns: auto auto auto;*/
     padding-left: 1rem;
     padding-right: 1rem;
+word-wrap: anywhere;
 }
 
 .requests-list-item {
@@ -933,10 +1077,12 @@ span.rightmsg-timestamp {
     height: 4.2rem;
     text-align: left;
     margin-bottom: 0.5rem;
+word-wrap: anywhere;
 }
 .requests-list-item div.profile-table-user-profile-btns {
     display: contents;
     float: left;
+word-wrap: anywhere;
 }
 
 .requests-list-item img.requests-list-item-icon {
@@ -945,31 +1091,39 @@ span.rightmsg-timestamp {
     width: 4rem;
     height: 4rem;
     float: left;
+word-wrap: anywhere;
 }
 .requests-list-item span.requests-list-item-displayname {
     float: left;
+word-wrap: anywhere;
 }
 .requests-list-item span.requests-list-item-username {
     font-size: 10px;
     float: left;
+word-wrap: anywhere;
 }
 
 .search-bar {
     display: inline-block;
     vertical-align: bottom;
+word-wrap: anywhere;
 }
 .search-bar button span {
     vertical-align: bottom;
     font-size: 25px;
+word-wrap: anywhere;
 }
 .search-bar button:hover span {
     color: black;
+word-wrap: anywhere;
 }
 .search-bar button span:hover {
     color: black;
+word-wrap: anywhere;
 }
 .search-bar button {
     vertical-align: middle;
+word-wrap: anywhere;
 }
 .search-bar input {
     border-radius: 10px;
@@ -978,9 +1132,11 @@ span.rightmsg-timestamp {
     outline: none;
     padding: 0.5rem;
     margin-right: 0.5rem;
+word-wrap: anywhere;
 }
 .saved-list{
     width: 45%;
+word-wrap: anywhere;
 }
 
 .make-a-post {
@@ -1000,6 +1156,7 @@ span.rightmsg-timestamp {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     padding-top: 0.5rem;
+word-wrap: anywhere;
 }
 .make-a-post:hover {
     background-color: rgb(255, 194, 239);
@@ -1016,6 +1173,7 @@ span.rightmsg-timestamp {
     color: white;
     font-size: 25px;
     float: left;
+word-wrap: anywhere;
 }
 
 .post-creation {
@@ -1024,9 +1182,11 @@ span.rightmsg-timestamp {
     display: flow-root;
     border-radius: 10px;
     box-shadow: 0.5rem 0.5rem rgb(221, 221, 221);
+word-wrap: anywhere;
 }
 .attachments-input {
     margin-top: 0.1rem;
+word-wrap: anywhere;
 } 
 .post-creation img {
     margin-top: 0.1rem;
@@ -1035,18 +1195,22 @@ span.rightmsg-timestamp {
     border-radius: 10px;
     outline: none;
     background-color: none;
+word-wrap: anywhere;
 }
 .post-creation label {
     float: left;
+word-wrap: anywhere;
 }
 .post-creation input {
     float: left;
+word-wrap: anywhere;
 }
 .post-creation-title {
     font-size: 21px;
     float: left;
     margin-bottom: 0.3rem;
     font-weight: bold;
+word-wrap: anywhere;
 }
 
 .post-creation textarea{
@@ -1056,6 +1220,7 @@ span.rightmsg-timestamp {
     border-radius: 10px;
     padding: 0.3rem;
     background-color: white;
+word-wrap: anywhere;
 }
 
 .post-creation button.post-btn {
@@ -1068,20 +1233,24 @@ span.rightmsg-timestamp {
     float: right;
     margin-bottom: -1rem;
     font-size: 17px;
+word-wrap: anywhere;
 }
 .post-creation button.post-btn:hover {
     background-color: rgb(255, 194, 239);
+word-wrap: anywhere;
 }
 
 .closebtn {
     float: right;
     margin-top: -0.5rem;
     user-select: none;
+word-wrap: anywhere;
 }
 .closebtn:hover {
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 50px;
+word-wrap: anywhere;
 }
 
 .charcount {
@@ -1101,6 +1270,7 @@ span.rightmsg-timestamp {
 
 .settings-main {
     width: 70%;
+word-wrap: anywhere;
 }
 .settings-sidebar {
     height: fit-content;
@@ -1109,6 +1279,7 @@ span.rightmsg-timestamp {
     padding-right: 0.5rem;
     box-sizing: content-box;
     width: 10%;
+word-wrap: anywhere;
 }
 .settings-sidebar-option {
     background-color: rgb(236, 236, 236);
@@ -1126,29 +1297,35 @@ span.rightmsg-timestamp {
     margin-bottom: 0.1rem;
     border-radius: 5px;
     text-align: left;
+word-wrap: anywhere;
 }
 .settings-sidebar-option:hover {
     background-color: rgb(223, 223, 223);
     cursor: pointer;
     width: 100%;
+word-wrap: anywhere;
 }
 .settings-sidebar-option:hover span {
     color: rgb(255, 0, 162);
     cursor: pointer;
     font-variation-settings:
     'FILL' 1;
+word-wrap: anywhere;
 }
 .settings-sidebar-option.selected {
     background-color: rgb(252, 193, 244);
+word-wrap: anywhere;
 }
 .settings-sidebar-option.selected span {
     color: rgb(255, 0, 162);
     font-variation-settings:
     'FILL' 1;
+word-wrap: anywhere;
 }
 .settings-sidebar-option span {
     float: left;
     vertical-align: text-bottom;
+word-wrap: anywhere;
 }
 
 .settings-main-content {   
@@ -1159,6 +1336,7 @@ span.rightmsg-timestamp {
     float: left;
     text-align: center;
     border-radius: 20px;
+word-wrap: anywhere;
 }
 
 div.account-settings center {
@@ -1167,9 +1345,11 @@ div.account-settings center {
     padding-left: 1rem;
     padding-bottom: 1rem;
     list-style-type: none;
+word-wrap: anywhere;
 }
 div.general-settings center {
     padding-bottom: 1rem;
+word-wrap: anywhere;
 }
 
 .intro {
@@ -1177,26 +1357,32 @@ div.general-settings center {
     animation-duration: 1s;
     filter: opacity(100%);
     user-select: none;
+word-wrap: anywhere;
 }
 
 ol {
     padding: 0;
     list-style-type: none;
+word-wrap: anywhere;
 }
 ol li {
     color: rgb(105, 105, 105);
+word-wrap: anywhere;
 }
 
 .danger {
     background-color: rgb(255, 125, 125);
+word-wrap: anywhere;
 }
 .danger:hover {
     background-color: rgb(255, 64, 64);
     color: white;
+word-wrap: anywhere;
 }
 .danger:hover span {
     background-color: rgb(255, 64, 64);
     color: white;
+word-wrap: anywhere;
 }
 
 @keyframes intro {
