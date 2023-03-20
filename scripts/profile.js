@@ -888,23 +888,21 @@ function genPostItem(postData, type, reply) {
     timestamp.classList.add("timestamp");
     //timestamp.innerText = moment(postData.timestamp).format("MMM DD");
     // chatgpt:
-    const formatRelativeTime = (date) => {
-        const secondsAgo = date.diff(moment(), 'seconds'); // get time difference in seconds
-      
-        // check if the date is in the past
-        if (secondsAgo >= 0) {
-            if (secondsAgo < 60) {
-                return '0s';
-            } else {
-                const minutesAgo = Math.floor(secondsAgo / 60);
-                return `${minutesAgo}m`;
-            }
-        } else {
-            return date.format('MMM D, YYYY');
-        }
-    };
+    function formatTimestamp(timestamp) {
+  const momentObj = moment(timestamp);
+  const diff = moment().diff(momentObj, 'seconds');
+  if (diff < 60) {
+    return `${diff}s`;
+  } else if (diff < 60 * 60) {
+    return `${moment().diff(momentObj, 'minutes')}m`;
+  } else {
+    return momentObj.format('MMM D, YYYY');
+  }
+}
+    // ugly because github pasting
 
-    timestamp.innerText = formatRelativeTime(moment(postData.timestamp))
+
+    timestamp.innerText = formatTimestamp(moment(postData.timestamp))
     
     timestamp.title = moment(postData.timestamp).format("MMMM DD, YYYY - hh:mm:ss");
     div.appendChild(timestamp);
