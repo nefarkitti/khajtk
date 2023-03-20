@@ -7,6 +7,11 @@ function init404() {
     // prepare for DISGUSTING CODE!
     switch (path) {
         case "g": {// users
+            let postBtn = document.getElementById("postbtn");
+            if (!postBtn) alert("whwat")
+            const overlayery = document.getElementById("showoverlay");
+            overlayery.onclick = function() { togglePostPopup(true) };
+            postBtn.onclick = function() { togglePostPopup(true) };
             content404.innerHTML = `<table class="profile-table" id="profile-table" hidden>
             <tr>
               <td class="profile-table-user-section"> <!-- profile -->
