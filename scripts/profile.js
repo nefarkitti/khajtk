@@ -147,7 +147,7 @@ async function createPost(page, reply) {
         }
         if (file.value.length) {
             data.file = file.value
-            if (flag.value == "on") {
+            if (flag.checked) {
                 data.flag = 1;
                 data.reason = (reason.value.length) ? reason.value : "No reason provided.";
             }
