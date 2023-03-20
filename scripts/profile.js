@@ -125,6 +125,7 @@ async function flagPost(id, flagOrUnflag = true) {
             },
             timeout: 5000
         });
+        popupShown = false;
         window.location.reload();
     } catch (error) {
         console.error(error)
@@ -175,6 +176,7 @@ async function createPost(page, reply) {
                 timeout: 5000
             });
         }
+        popupShown = false;
         window.location.reload()
     } catch (error) {
         console.error(error)
