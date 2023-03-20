@@ -76,6 +76,8 @@ function init404() {
         case 'post': {//posts
             let postBtn = document.getElementById("postbtn");
             if (!postBtn) alert("whwat")
+            const overlayery = document.getElementById("showoverlay");
+            overlayery.onclick = function() { toggleReplyPopup() };
             postBtn.onclick = function() { toggleReplyPopup() };
             postBtn.innerHTML = `<span class="material-symbols-rounded">add_comment</span> reply to post`
             content404.innerHTML = `<br><br>
