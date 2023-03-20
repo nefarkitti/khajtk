@@ -73,7 +73,11 @@ function init404() {
           initProfile()
             break;
         }
-        case 'post': {
+        case 'post': {//posts
+            let postBtn = document.getElementById("postbtn");
+            if (!postBtn) alert("whwat")
+            postBtn.onclick = function() { toggleReplyPopup() };
+            postBtn.innerHTML = `<span class="material-symbols-rounded">add_comment</span> reply to post`
             content404.innerHTML = `<br><br>
             <div class="profile-table-posts-section"> 
                 <div class="profile-table-container" id="postsTable" hidden> <!-- posts -->
