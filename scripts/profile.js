@@ -54,7 +54,7 @@ function toggleFlagPopup(id) {
     overlayBg.hidden = !overlayBg.hidden;
 }
 
-function togglePostPopup() {
+function togglePostPopup(isUser) {
     createPopup("Make a post", "togglePostPopup()", `<textarea name="" id="postcontent" autocomplete="off"></textarea>
     <span class="charcount" id="postcharcount">450</span>
     <div class="attachments-input">
@@ -69,7 +69,7 @@ function togglePostPopup() {
         <input type="text" name="flagreason" id="postfreason" autocomplete="off"><br>
     </div>
     <br><br><br>
-    <button class="post-btn" onclick="createPost('home')">post</button>`);
+    <button class="post-btn" onclick="createPost('${isUser ? 'user' : 'home'}')">post</button>`);
     const popup = document.getElementById("popup");
     const attachmentsConfig = document.getElementById("attachments-config");
     const postContent = document.getElementById("postcontent")
