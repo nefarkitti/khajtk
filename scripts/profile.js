@@ -473,7 +473,7 @@ async function editSetting(name, id) {
             },
             timeout: 5000
         });
-        window.location.reload()
+        //window.location.reload()
     } catch (error) {
         console.error(error)
         alert(error.response.data)
