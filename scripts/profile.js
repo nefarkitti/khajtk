@@ -191,9 +191,10 @@ async function initNav() {
     if (!friendReqs) return;
     if (!msgCount) return;
     if (overlayBg == null) {
-        socket.on('refresh_notifs', () => {
+        /*socket.on('refresh_notifs', () => {
             initNav();
-        })
+        })*/
+        // stop kruma from doing that
     }
     overlayBg = document.getElementById("showoverlay");
     try {
