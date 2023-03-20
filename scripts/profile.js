@@ -886,7 +886,26 @@ function genPostItem(postData, type, reply) {
     div.appendChild(postBtns);
     const timestamp = document.createElement('span');
     timestamp.classList.add("timestamp");
-    timestamp.innerText = moment(postData.timestamp).format("MMM DD");
+    //timestamp.innerText = moment(postData.timestamp).format("MMM DD");
+    // chatgpt:
+    const formatRelativeTime = (date) => {
+        const secondsAgo = date.diff(moment(), 'seconds'); // get time difference in seconds
+      
+        // check if the date is in the past
+        if (secondsAgo >= 0) {
+            if (secondsAgo < 60) {
+                return '0s';
+            } else {
+                const minutesAgo = Math.floor(secondsAgo / 60);
+                return `${minutesAgo}m`;
+            }
+        } else {
+            return date.format('MMM D, YYYY');
+        }
+    };
+
+    timestamp.innerText = formatRelativeTime(moment(postData.timestamp))
+    
     timestamp.title = moment(postData.timestamp).format("MMMM DD, YYYY - hh:mm:ss");
     div.appendChild(timestamp);
 
