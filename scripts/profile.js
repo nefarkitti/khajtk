@@ -482,7 +482,7 @@ async function editSetting(name, id) {
 }
 
 let pressedEdit = false;
-
+let editedChanges = false;
 function toggleEditing() {
     editing = !editing;
     const profileView = document.getElementById("profile-view")
@@ -497,12 +497,25 @@ function toggleEditing() {
             const avatarIcon = document.getElementById("edit-icon")
             pressedEdit = true;
             avatar.onchange = function () {
+                editedChanges = true;
                 if (avatar.value.length && (avatar.value.startsWith("http://") || avatar.value.startsWith("https://"))) {
                     //imgPreview.src = `${URL}/external?url=${encodeURIComponent(urlCheck.value)}`;;
                     // too much requests loll glitch doesnt like that
                     avatarIcon.src = `https://external-content.duckduckgo.com/iu/?u=${encodeURIComponent(avatar.value)}`
                     // yeah i think duckduckgo wont mind that too much
                 }
+            }
+            username.onchange = function () {
+                editedChanges = true;
+            }
+            nickname.onchange = function () {
+                editedChanges = true;
+            }
+            bio.onchange = function () {
+                editedChanges = true;
+            }
+            banner.onchange = function () {
+                editedChanges = true;
             }
         }
         const bio = document.getElementById("edit-bio")
@@ -513,6 +526,7 @@ function toggleEditing() {
         bio.placeholder = (currentUser.bio != "") ? currentUser.bio : "Bio";
         banner.placeholder = (currentUser.banner == null) ? "banner" : currentUser.banner;
     } else {
+        if (editedChanges) window.location.reload();
         profileView.hidden = false;
         editingView.hidden = true;
     }
