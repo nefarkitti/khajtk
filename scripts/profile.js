@@ -217,11 +217,11 @@ async function initNav() {
         const f_count = friendReqData.data;
         const m_count = msgCountData.data;
         if (f_count.length > 0) {
-            friendReqs.innerText = f_count.length;
+            friendReqs.innerText = f_count.length > 99 ? '99+' : f_count.length;
             friendReqs.style = ""
         }
         if (m_count.count > 0) {
-            msgCount.innerText = m_count.count;
+            msgCount.innerText = m_count.count > 99 ? '99+' : m_count.count;
             msgCount.style = ""
         }
     } catch (error) {
