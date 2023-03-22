@@ -24,6 +24,12 @@ function formatTime(timestamp) {
     }
 }
 
+function scrollToMessage(messageId) {
+    var element = document.getElementById(messageId);
+    if (!element) return;
+    element.scrollIntoView();
+}
+
 function addMessage(data) {
     const messages = document.getElementById("messages");
     const messageDiv = document.createElement("div");
@@ -61,7 +67,9 @@ function addMessage(data) {
     messageDiv.appendChild(pContent);
     messageDiv.appendChild(document.createElement("br"))
     messageDiv.appendChild(pTimestamp);
+    messageDiv.id = `message-${data.id}`;
     messages.appendChild(messageDiv)
+    scrollToMessage(`message-${data.id}`)
 }
 
 async function selectUser(userData, dontRemoveOld) {
