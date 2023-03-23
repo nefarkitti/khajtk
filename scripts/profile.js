@@ -39,7 +39,7 @@ function parseMarkdown(text) {
     .replace(markdownRegex.ping, (user) => {
         if (markdownRegex.ping.test(user)) {
             const a = document.createElement("a");
-            a.href = ((URI == "https://khajiitlifesupport.glitch.me") ? `/khajtk` : '/') + `g/${user.replace("@", "")}`;
+            a.href = ((URI == "https://khajiitlifesupport.glitch.me") ? `/khajtk/` : '/') + `g/${user.replace("@", "")}`;
             a.innerText = user;
             a.target = "_blank";
             return a.outerHTML;
