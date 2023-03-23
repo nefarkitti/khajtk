@@ -9,7 +9,45 @@ let currentUser = {
     "bio": "",
     "sentRequest": true
 }
+function escapeHTML(str){
+    return new Option(str).innerHTML;
+}
+const markdownRegex = {
+    bold: /\*\*(.*?)\*\*/gim,
+    italics: /\*(.*?)\*/gim,
+    strikethrough: /\~\~(.*?)\~\~/gim,
+    underline: /\_\_(.*?)\_\_/gim,
+    ping: /\@(.*)/gim,
+    link: /^(https?|ftp):\/\/[^\s$.?#].[^\s]*$/gim
+};
 
+function parseMarkdown(text) {
+    return text.replace(markdownRegex.link, (link) => {
+        if (markdownRegex.link.test(link)) {
+            const a = document.createElement("a");
+            a.href = link;
+            a.innerText = link;
+            a.target = "_blank";
+            return a.outerHTML;
+        } else {
+            return link;
+        }
+    }).replace(markdownRegex.bold, '<strong>$1</strong>')
+    .replace(markdownRegex.italics, '<i>$1</i>')
+    .replace(markdownRegex.strikethrough, '<del>$1</del>')
+    .replace(markdownRegex.underline, '<ins>$1</ins>')
+    .replace(markdownRegex.ping, (user) => {
+        if (markdownRegex.ping.test(user)) {
+            const a = document.createElement("a");
+            a.href = ((URI == "https://khajiitlifesupport.glitch.me") ? `/khajtk` : '/') + `g/${user}`;
+            a.innerText = user;
+            a.target = "_blank";
+            return a.outerHTML;
+        } else {
+            return link;
+        }
+    }).trim()
+}
 let currentPosts = [];
 let overlayBg = null;
 let popupShown = false;
@@ -736,7 +774,8 @@ function genPostItem(postData, type, reply) {
     }
     const content = document.createElement('span');
     content.classList.add("profile-table-post-contents");
-    content.innerText = postData.content;
+    const splitContent = postData.content.split("\n")
+    content.innerHTML = splitContent.map(line => parseMarkdown(escapeHTML(line))).join("<br>");//postData.content;
     div.appendChild(content);
 
     if (typeof postData.file == "string" && postData.file.length > 0) {
@@ -974,7 +1013,8 @@ function genPostItem(postData, type, reply) {
 
         const content = document.createElement('span');
         content.classList.add("profile-table-friendreplies-contents");
-        content.innerText = replyData.content;
+        const splitContent = replyData.content.split("\n")
+        content.innerHTML = splitContent.map(line => parseMarkdown(escapeHTML(line))).join("<br>");//replyData.content;
         replyDiv.appendChild(whitespace());
         replyDiv.appendChild(content);
         repliesDiv.appendChild(replyDiv)
