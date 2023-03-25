@@ -171,7 +171,7 @@ async function flagPost(id, flagOrUnflag = true) {
     }
 }
 
-async function createPost(page, reply) {
+async function createPost(page, reply) { // i will never know why i had this "reply" parameter
     const content = document.getElementById("postcontent");
     const file = document.getElementById("postattachurl");
     const flag = document.getElementById("postflag");
@@ -587,7 +587,7 @@ function refreshingPosts() {
 // 2 - Saved Post
 function genPostItem(postData, type, reply) {
     refreshingPosts()
-    function gotoPost() {
+    function gotoPost() { // this function was meant to be for #post-1, #post-2, etc. But I decided not to do that
 
     }
 
@@ -1016,6 +1016,7 @@ function genPostItem(postData, type, reply) {
         const splitContent = replyData.content.split("\n")
         content.innerHTML = splitContent.map(line => parseMarkdown(escapeHTML(line))).join("<br>");//replyData.content;
         replyDiv.appendChild(whitespace());
+        if (replyData.file != null && replyData.file.length > 0) content.innerHTML += ` <span class="material-symbols-rounded pin">imagesmode</span>`;
         replyDiv.appendChild(content);
         repliesDiv.appendChild(replyDiv)
         repliesDiv.appendChild(document.createElement("br"));
