@@ -585,6 +585,7 @@ function refreshingPosts() {
 // 0 - Normal Post
 // 1 - Own Post
 // 2 - Saved Post
+// 3 - Reply Post
 function genPostItem(postData, type, reply) {
     refreshingPosts()
     function gotoPost() { // this function was meant to be for #post-1, #post-2, etc. But I decided not to do that
@@ -668,41 +669,40 @@ function genPostItem(postData, type, reply) {
                 }
                 moreBtnView.appendChild(unpinBtn);
             }
-            const flagBtn = document.createElement("div");
-            flagBtn.className = "list-item red";
-            flagBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">flag</span>${(postData.flag == 0) ? "flag post" : "unflag post"}</span>`
-            if (postData.flag == 1) {
-                flagBtn.onclick = function() {
-                    flagPost(postData.ID, false)
-                }
-            } else {
-                flagBtn.onclick = function() {
-                    toggleFlagPopup(postData.ID)
-                }
-            }
-            const removeBtn = document.createElement("div");
-            removeBtn.className = "list-item red";
-            removeBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">delete</span>remove post</span>`
-            removeBtn.onclick = async function() {
-                try {
-                    await axios({
-                        url: `${URI}/api/posts/${postData.ID}`,
-                        method: "DELETE",
-                        headers: {
-                            "authorization": session
-                        },
-                        timeout: 5000
-                    });
-                    window.location.reload();
-                } catch (error) {
-                    console.error(error)
-                    alert(error.response.data)
-                }
-            }
-            moreBtnView.appendChild(flagBtn);
-            moreBtnView.appendChild(removeBtn);
         }
-
+        const flagBtn = document.createElement("div");
+        flagBtn.className = "list-item red";
+        flagBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">flag</span>${(postData.flag == 0) ? "flag post" : "unflag post"}</span>`
+        if (postData.flag == 1) {
+            flagBtn.onclick = function() {
+                flagPost(postData.ID, false)
+            }
+        } else {
+            flagBtn.onclick = function() {
+                toggleFlagPopup(postData.ID)
+            }
+        }
+        const removeBtn = document.createElement("div");
+        removeBtn.className = "list-item red";
+        removeBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">delete</span>remove post</span>`
+        removeBtn.onclick = async function() {
+            try {
+                await axios({
+                    url: `${URI}/api/posts/${postData.ID}`,
+                    method: "DELETE",
+                    headers: {
+                        "authorization": session
+                    },
+                    timeout: 5000
+                });
+                window.location.reload();
+            } catch (error) {
+                console.error(error)
+                alert(error.response.data)
+            }
+        }
+        moreBtnView.appendChild(flagBtn);
+        moreBtnView.appendChild(removeBtn);
     } else {
         moreBtnView.style.right = "28vw";
         const unbookmarkBtn = document.createElement("div");
