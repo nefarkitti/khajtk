@@ -651,58 +651,60 @@ function genPostItem(postData, type, reply) {
         if (type == 3) {
             moreBtnView.style.right = "20.5vw";
         }
-        if (type == 1) {
-            if (!postData.pinned) {
-                const pinBtn = document.createElement("div");
-                pinBtn.className = "list-item";
-                pinBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">push_pin</span>pin post</span>`
-                pinBtn.onclick = function() {
-                    PostAPIReload(postData.ID, "pin")
+        if (currentUser.user_id != -1 (postData.user_id == currentUser.user_id && currentUser.me) || (postData.user_id != currentUser.user_id && !currentUser.me)) {            
+            if (type == 1) {
+                if (!postData.pinned) {
+                    const pinBtn = document.createElement("div");
+                    pinBtn.className = "list-item";
+                    pinBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">push_pin</span>pin post</span>`
+                    pinBtn.onclick = function() {
+                        PostAPIReload(postData.ID, "pin")
+                    }
+                    moreBtnView.appendChild(pinBtn);
+                } else {
+                    const unpinBtn = document.createElement("div");
+                    unpinBtn.className = "list-item red";
+                    unpinBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">push_pin</span>unpin post</span>`
+                    unpinBtn.onclick = function() {
+                        PostAPIReload(postData.ID, "unpin")
+                    }
+                    moreBtnView.appendChild(unpinBtn);
                 }
-                moreBtnView.appendChild(pinBtn);
+            }
+            const flagBtn = document.createElement("div");
+            flagBtn.className = "list-item red";
+            flagBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">flag</span>${(postData.flag == 0) ? "flag post" : "unflag post"}</span>`
+            if (postData.flag == 1) {
+                flagBtn.onclick = function() {
+                    flagPost(postData.ID, false)
+                }
             } else {
-                const unpinBtn = document.createElement("div");
-                unpinBtn.className = "list-item red";
-                unpinBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">push_pin</span>unpin post</span>`
-                unpinBtn.onclick = function() {
-                    PostAPIReload(postData.ID, "unpin")
+                flagBtn.onclick = function() {
+                    toggleFlagPopup(postData.ID)
                 }
-                moreBtnView.appendChild(unpinBtn);
             }
+            const removeBtn = document.createElement("div");
+            removeBtn.className = "list-item red";
+            removeBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">delete</span>remove post</span>`
+            removeBtn.onclick = async function() {
+                try {
+                    await axios({
+                        url: `${URI}/api/posts/${postData.ID}`,
+                        method: "DELETE",
+                        headers: {
+                            "authorization": session
+                        },
+                        timeout: 5000
+                    });
+                    window.location.reload();
+                } catch (error) {
+                    console.error(error)
+                    alert(error.response.data)
+                }
+            }
+            moreBtnView.appendChild(flagBtn);
+            moreBtnView.appendChild(removeBtn);
         }
-        const flagBtn = document.createElement("div");
-        flagBtn.className = "list-item red";
-        flagBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">flag</span>${(postData.flag == 0) ? "flag post" : "unflag post"}</span>`
-        if (postData.flag == 1) {
-            flagBtn.onclick = function() {
-                flagPost(postData.ID, false)
-            }
-        } else {
-            flagBtn.onclick = function() {
-                toggleFlagPopup(postData.ID)
-            }
-        }
-        const removeBtn = document.createElement("div");
-        removeBtn.className = "list-item red";
-        removeBtn.innerHTML = `<span><span class="material-symbols-rounded listbtn">delete</span>remove post</span>`
-        removeBtn.onclick = async function() {
-            try {
-                await axios({
-                    url: `${URI}/api/posts/${postData.ID}`,
-                    method: "DELETE",
-                    headers: {
-                        "authorization": session
-                    },
-                    timeout: 5000
-                });
-                window.location.reload();
-            } catch (error) {
-                console.error(error)
-                alert(error.response.data)
-            }
-        }
-        moreBtnView.appendChild(flagBtn);
-        moreBtnView.appendChild(removeBtn);
     } else {
         moreBtnView.style.right = "28vw";
         const unbookmarkBtn = document.createElement("div");
