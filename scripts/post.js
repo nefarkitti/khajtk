@@ -16,6 +16,16 @@ async function refreshPage() {
                 "authorization": session
             }
         });
+        const getUserData = await axios({
+            url: `${URI}/api/user/me`,
+            method: "GET",
+            headers: {
+                "authorization": session
+            },
+            timeout: 5000
+        });
+        currentUser = getUserData.data;
+        currentUser.me = true;
         document.title = `khaj//t YOUR MOM!!!!!`
         currentPost = getPostData.data;
         postsTable.hidden = false;
