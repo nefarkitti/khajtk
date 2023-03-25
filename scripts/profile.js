@@ -651,7 +651,7 @@ function genPostItem(postData, type, reply) {
         if (type == 3) {
             moreBtnView.style.right = "20.5vw";
         }
-        if (currentUser.user_id != -1 (postData.user_id == currentUser.user_id && currentUser.me) || (postData.user_id != currentUser.user_id && !currentUser.me)) {            
+        if (currentUser.user_id != -1 && (postData.user_id == currentUser.user_id && currentUser.me) || (postData.user_id != currentUser.user_id && !currentUser.me)) {            
             if (type == 1) {
                 if (!postData.pinned) {
                     const pinBtn = document.createElement("div");
