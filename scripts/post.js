@@ -6,7 +6,7 @@ async function initPost() {
 
 async function refreshPage() {
     const postsTable = document.getElementById('postsTable')
-    if (!postsTable) window.location.href = "https://nefarkitti.github.io/khajtk";
+    if (!postsTable) window.location.href = "https://social.nyaco.tk";
     try {
         const postID = location.pathname.split("/")[3];
         const getPostData = await axios({
@@ -93,7 +93,7 @@ function toggleReplyPopup() {
 
 async function loadPosts() {
     const postsTable = document.getElementById('postsTable')
-    if (!postsTable) window.location.href = "https://nefarkitti.github.io/khajtk";
+    if (!postsTable) window.location.href = "https://social.nyaco.tk";
     postsTable.innerHTML = ""
     
     const mainPost = JSON.parse(JSON.stringify(currentPost)); // mutation be like
