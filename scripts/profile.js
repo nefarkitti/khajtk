@@ -274,7 +274,7 @@ async function initProfile() {
     if (!profileTable) window.location.href = "https://khajt.nyaco.tk/";
     
     try {
-        const userName = location.pathname.split("/")[3];
+        const userName = location.pathname.split("/")[2];
         const getUserData = await axios({
             url: `${URI}/api/user/${userName}`,
             method: "GET",
