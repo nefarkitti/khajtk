@@ -10,10 +10,10 @@ async function aTimer(page) {
             timeout: 5000
         });
         // TODO: do stuff for refresh token later whne implemntation lo
-        if (["loading","auth"].includes(page)) window.location.href = "https://social.nyaco.tk/home"
+        if (["loading","auth"].includes(page)) window.location.href = "https://khajt.nyaco.tk/home"
     } catch (error) {
         if (error.response && error.response.status == 401 && !["auth","404"].includes(page)) {
-            window.location.href = 'https://social.nyaco.tk/main';
+            window.location.href = 'https://khajt.nyaco.tk/main';
         } else {
             console.log(error);
             if (["ECONNABORTED", "ECONNRESET", "ECONNREFUSED", "ETIMEDOUT"].includes(error.code) || error.response.status == 0) {
@@ -25,7 +25,7 @@ async function aTimer(page) {
 
 async function logout() {
     localStorage.removeItem("kartissus");
-    window.location.href = "https://social.nyaco.tk/main"
+    window.location.href = "https://khajt.nyaco.tk/main"
 }
 
 async function checkAuth(page) {
