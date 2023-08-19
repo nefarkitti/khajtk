@@ -8,7 +8,7 @@ async function refreshPage() {
     const postsTable = document.getElementById('postsTable')
     if (!postsTable) window.location.href = "https://khajt.nyaco.tk";
     try {
-        const postID = location.pathname.split("/")[3];
+        const postID = location.pathname.split("/")[2];
         const getPostData = await axios({
             url: `${URI}/api/posts/${postID}`,
             method: "GET",
