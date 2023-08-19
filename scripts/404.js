@@ -3,7 +3,7 @@
 function init404() {
     const content404 = document.getElementById("404content")
     if (!content404) return alert("what.");
-    const path = location.pathname.split("/")[2] // change to [1] after get domain because what
+    const path = location.pathname.split("/")[1] // change to [1] after get domain because what
     // prepare for DISGUSTING CODE!
     switch (path) {
         case "g": {// users
