@@ -91,7 +91,7 @@ function genItem(userData, showFriendButtons) {
     infoBtn.classList.add("user-profile-btn");
     infoBtn.innerHTML = `<span class="material-symbols-rounded ubtn-icon">person</span>info`
     infoBtn.onclick = function() {
-        window.location.href = `https://social.nyaco.tk/g/${userData.username}`;
+        window.location.href = `https://khajt.nyaco.tk/g/${userData.username}`;
     }
     btns.appendChild(infoBtn);
     console.log(showFriendButtons)
