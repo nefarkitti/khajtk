@@ -271,7 +271,7 @@ async function initProfile() {
     checkAuth('home')
     initNav()
     const profileTable = document.getElementById('profile-table')
-    if (!profileTable) window.location.href = "https://social.nyaco.tk/";
+    if (!profileTable) window.location.href = "https://khajt.nyaco.tk/";
     
     try {
         const userName = location.pathname.split("/")[3];
@@ -485,7 +485,7 @@ async function toggleBlock() {
         });
         alert(`Successfully ${currentUser.didIblock ? "un" : ""}blocked the user!`)
         if (!currentUser.didIblock) {
-            window.location.href = "https://social.nyaco.tk/home"
+            window.location.href = "https://khajt.nyaco.tk/home"
         } else {
             window.location.reload();
         }
@@ -611,7 +611,7 @@ function genPostItem(postData, type, reply) {
         div.onclick = function(e) {
             if ([`profile-post-${postData.ID}`].includes(e.target.id)) {
                 //alert("click")
-                window.location.href = `https://social.nyaco.tk/post/${postData.ID}`
+                window.location.href = `https://khajt.nyaco.tk/post/${postData.ID}`
             }
         }
     }
@@ -731,7 +731,7 @@ function genPostItem(postData, type, reply) {
     pIcon.classList.add("profile-table-post-usericon")
     pIcon.src = getIcon(postData.avatar)
     const pIconClick = document.createElement('a');
-    pIconClick.href = `https://social.nyaco.tk/g/${postData.username}`
+    pIconClick.href = `https://khajt.nyaco.tk/g/${postData.username}`
     pIconClick.appendChild(pIcon)
     div.appendChild(pIconClick);
 
@@ -740,7 +740,7 @@ function genPostItem(postData, type, reply) {
     pDisplay.innerText = postData.nickname;
     if (postData.verified) pDisplay.innerHTML += `<span class="material-symbols-rounded verified" title="Verified Account">verified</span>`
     const pDisplayClick = document.createElement('a');
-    pDisplayClick.href = `https://social.nyaco.tk/g/${postData.username}`
+    pDisplayClick.href = `https://khajt.nyaco.tk/g/${postData.username}`
     pDisplayClick.appendChild(pDisplay)
 
     div.appendChild(pDisplayClick);
@@ -750,7 +750,7 @@ function genPostItem(postData, type, reply) {
     pUser.classList.add("profile-table-post-username")
     pUser.innerText = `@${postData.username}`;
     const pUserClick = document.createElement('a');
-    pUserClick.href = `https://social.nyaco.tk/g/${postData.username}`
+    pUserClick.href = `https://khajt.nyaco.tk/g/${postData.username}`
     pUserClick.appendChild(pUser)
 
     div.appendChild(pUserClick);
@@ -1000,7 +1000,7 @@ function genPostItem(postData, type, reply) {
         pIcon.classList.add("profile-table-friendreplies-usericon")
         pIcon.src = getIcon(replyData.avatar)
         const pIconClick = document.createElement('a');
-        pIconClick.href = `https://social.nyaco.tk/g/${replyData.username}`
+        pIconClick.href = `https://khajt.nyaco.tk/g/${replyData.username}`
         pIconClick.appendChild(pIcon);
         replyDiv.appendChild(pIconClick);
         const pDisplay = document.createElement("span")
@@ -1008,7 +1008,7 @@ function genPostItem(postData, type, reply) {
         pDisplay.innerText = replyData.nickname;
         if (replyData.verified) pDisplay.innerHTML += `<span class="material-symbols-rounded verified" title="Verified Account">verified</span>`
         const pDisplayClick = document.createElement('a');
-        pDisplayClick.href = `https://social.nyaco.tk/g/${replyData.username}`
+        pDisplayClick.href = `https://khajt.nyaco.tk/g/${replyData.username}`
         pDisplayClick.appendChild(pDisplay)
         replyDiv.appendChild(whitespace());
         replyDiv.appendChild(pDisplayClick);
@@ -1170,7 +1170,7 @@ function profile(userData) {
             userData.mutuals.forEach(mutual => {
                 const mutualDiv = document.createElement("div");
                 const aLink = document.createElement("a");
-                aLink.href = `https://social.nyaco.tk/g/${mutual.username}`
+                aLink.href = `https://khajt.nyaco.tk/g/${mutual.username}`
                 mutualDiv.className = "mutual";
                 const mIcon = document.createElement("img");
                 mIcon.src = getIcon(mutual.avatar)
